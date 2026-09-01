@@ -46,16 +46,26 @@ const BRIEFINGS = [
 
 /* Signals are short — a headline and a sentence, not a full write-up. */
 const SIGNALS = [
-  {id:'signal-043', num:'#043', title:'Germany expands sovereign cloud initiative', layer:3, impact:'High', icon:'cloud', date:'2026-08-27', url:'#'},
-  {id:'signal-042', num:'#042', title:'Mistral announces new public-sector partnership', layer:4, impact:'Medium', icon:'building', date:'2026-08-26', url:'#'},
-  {id:'signal-041', num:'#041', title:'EU advances data space interoperability framework', layer:5, impact:'High', icon:'database', date:'2026-08-25', url:'#'},
-  {id:'signal-040', num:'#040', title:'New European chip project enters development', layer:1, impact:'Medium', icon:'chip', date:'2026-08-22', url:'#'},
-  {id:'signal-039', num:'#039', title:'Cross-border AI procurement guideline published', layer:7, impact:'Medium', icon:'globe', date:'2026-08-21', url:'#'},
-  {id:'signal-038', num:'#038', title:'France and Germany align on IaaS certification scheme', layer:3, impact:'High', icon:'database', date:'2026-08-19', url:'#'},
-  {id:'signal-037', num:'#037', title:'Open-weight model release cited in Commission draft', layer:6, impact:'Medium', icon:'building', date:'2026-08-18', url:'#'},
-  {id:'signal-036', num:'#036', title:'Undersea cable resilience fund announced', layer:2, impact:'High', icon:'globe', date:'2026-08-14', url:'#'},
-  {id:'signal-035', num:'#035', title:'Rare earths recycling target set for 2030', layer:0, impact:'Low', icon:'chip', date:'2026-08-12', url:'#'},
-  {id:'signal-034', num:'#034', title:'Platform interoperability complaint filed with regulator', layer:4, impact:'Medium', icon:'cloud', date:'2026-08-08', url:'#'}
+  {id:'signal-043', num:'#043', title:'Germany expands sovereign cloud initiative', layer:3, impact:'High', icon:'cloud', date:'2026-08-27', url:'#',
+   detail:"The initiative adds new compute capacity operated under German jurisdiction, aimed at reducing reliance on non-EU cloud providers for public-sector workloads. Officials are framing it as a template other member states could adopt."},
+  {id:'signal-042', num:'#042', title:'Mistral announces new public-sector partnership', layer:4, impact:'Medium', icon:'building', date:'2026-08-26', url:'#',
+   detail:"The partnership will pilot Mistral's models inside government workflows, testing whether an EU-based model can meet public procurement requirements. It's an early signal of the AI Act's compliance-by-design pressure in practice."},
+  {id:'signal-041', num:'#041', title:'EU advances data space interoperability framework', layer:5, impact:'High', icon:'database', date:'2026-08-25', url:'#',
+   detail:"The framework sets shared technical standards so data spaces across sectors and countries can exchange data more easily. Backers hope it reduces the fragmentation that has slowed adoption of European data spaces so far."},
+  {id:'signal-040', num:'#040', title:'New European chip project enters development', layer:1, impact:'Medium', icon:'chip', date:'2026-08-22', url:'#',
+   detail:"The project focuses on a mid-node chip design rather than cutting-edge fabrication, targeting industrial and automotive applications. It reflects a more incremental approach to chip sovereignty than headline-grabbing mega-fabs."},
+  {id:'signal-039', num:'#039', title:'Cross-border AI procurement guideline published', layer:7, impact:'Medium', icon:'globe', date:'2026-08-21', url:'#',
+   detail:"The guideline standardizes how public bodies across member states evaluate AI vendors, including data handling and explainability requirements. It's intended to make joint procurement between countries more practical."},
+  {id:'signal-038', num:'#038', title:'France and Germany align on IaaS certification scheme', layer:3, impact:'High', icon:'database', date:'2026-08-19', url:'#',
+   detail:"The two governments agreed on a shared certification baseline for infrastructure-as-a-service providers, easing the path for smaller cloud vendors to qualify for public contracts in both markets. It's a modest but concrete step toward mutual recognition."},
+  {id:'signal-037', num:'#037', title:'Open-weight model release cited in Commission draft', layer:6, impact:'Medium', icon:'building', date:'2026-08-18', url:'#',
+   detail:"The citation suggests EU policymakers increasingly treat open-weight releases as a benchmark for transparency, not just a developer-community trend. It could shape how future guidance defines model documentation standards."},
+  {id:'signal-036', num:'#036', title:'Undersea cable resilience fund announced', layer:2, impact:'High', icon:'globe', date:'2026-08-14', url:'#',
+   detail:"The fund is meant to speed up repair capacity and diversify cable routes after a string of accidental and suspected sabotage incidents. It's a direct response to concerns about Europe's dependence on a handful of vulnerable chokepoints."},
+  {id:'signal-035', num:'#035', title:'Rare earths recycling target set for 2030', layer:0, impact:'Low', icon:'chip', date:'2026-08-12', url:'#',
+   detail:"The 2030 target covers a specific share of rare earths used in electronics and EVs, sourced from recycled material rather than new mining. It's a small but symbolic step toward reducing import dependence on a handful of supplier countries."},
+  {id:'signal-034', num:'#034', title:'Platform interoperability complaint filed with regulator', layer:4, impact:'Medium', icon:'cloud', date:'2026-08-08', url:'#',
+   detail:"The complaint alleges a major platform is making it difficult for competitors to plug into its ecosystem — a test case for how strictly interoperability rules will be enforced. The outcome could set precedent for similar disputes still in the pipeline."}
 ];
 
 const TEAM = [
@@ -69,7 +79,7 @@ const TEAM = [
    photo:'team/marie-gevers.jpg', linkedin:'https://www.linkedin.com/in/marie-gevers-0b4b7a349/',
    bio:'Marie studies International Business Administration and Entrepreneurship with a minor in Business Psychology at Leuphana University Lüneburg. She is particularly interested in exploring how artificial intelligence is reshaping economic decision-making and public policy. As Finance & Founder\'s Associate at a Hamburg-based startup building AI-powered predictive maintenance solutions, she gets to see these dynamics play out first-hand.'},
   {id:'guest-contributor', name:'Guest Contributor', role:'External Perspective', focus:'Expert voices from across Europe', color:'#A79C8B', guest:true,
-   photo:'team/guest-map.svg',
+   photo:'team/guest-illustration.svg',
    bio:'Beyond Beta periodically publishes guest essays from practitioners, researchers, and policymakers working directly on technology sovereignty across Europe.'}
 ];
 
@@ -83,6 +93,35 @@ function el(tag, attrs){
 function resolveColor(varName){
   return getComputedStyle(document.documentElement).getPropertyValue(varName.replace('var(--','').replace(')','')).trim() || varName;
 }
+function hexToHsl(hex){
+  hex = hex.replace('#','');
+  const r = parseInt(hex.substr(0,2),16)/255, g = parseInt(hex.substr(2,2),16)/255, b = parseInt(hex.substr(4,2),16)/255;
+  const max = Math.max(r,g,b), min = Math.min(r,g,b);
+  let h, s, l = (max+min)/2;
+  if(max === min){ h = 0; s = 0; }
+  else {
+    const d = max - min;
+    s = l > 0.5 ? d/(2-max-min) : d/(max+min);
+    if(max === r) h = ((g-b)/d + (g<b?6:0));
+    else if(max === g) h = (b-r)/d + 2;
+    else h = (r-g)/d + 4;
+    h *= 60;
+  }
+  return [h,s,l];
+}
+function hslToHex(h,s,l){
+  h = ((h%360)+360)%360;
+  const c = (1-Math.abs(2*l-1))*s, x = c*(1-Math.abs((h/60)%2-1)), m = l-c/2;
+  let r,g,b;
+  if(h<60){r=c;g=x;b=0;} else if(h<120){r=x;g=c;b=0;} else if(h<180){r=0;g=c;b=x;}
+  else if(h<240){r=0;g=x;b=c;} else if(h<300){r=x;g=0;b=c;} else {r=c;g=0;b=x;}
+  const toHex = v => Math.round((v+m)*255).toString(16).padStart(2,'0');
+  return '#'+toHex(r)+toHex(g)+toHex(b);
+}
+function complementaryColor(hex){
+  const [h] = hexToHsl(hex);
+  return hslToHex(h+180, 0.55, 0.85);
+}
 function layerByNum(num){ return LAYERS.find(l=>l.num===num); }
 
 /* ---------- sovereignty map (shared by index.html hero/teaser and framework.html) ---------- */
@@ -94,14 +133,14 @@ function buildMap(svg, opts){
   const ringGroup = el('g', {opacity:'0.35'});
   [1.9, 3.1, 4.3].forEach(mult=>{
     ringGroup.appendChild(el('circle', {
-      cx:hubX, cy:hubY, r: (small?13:19)*mult, fill:'none',
-      stroke:'#C9CFC5', 'stroke-width': small?0.6:0.8, 'stroke-dasharray': small?'2,4':'3,6'
+      cx:hubX, cy:hubY, r: (small?16:19)*mult, fill:'none',
+      stroke:'#C9CFC5', 'stroke-width': small?0.75:0.8, 'stroke-dasharray': small?'2,4':'3,6'
     }));
   });
   svg.appendChild(ringGroup);
 
-  const D = small?32:60;
-  const stub = small?20:45;
+  const D = small?40:60;
+  const stub = small?25:45;
   const spineX = hubX - D;
 
   const others = LAYERS.map((l,idx)=>idx).filter(idx => LAYERS[idx].num !== 5);
@@ -114,11 +153,12 @@ function buildMap(svg, opts){
     const isHi = layer.num === 5;
     const diff = sy - hubY;
     let bendX = hubX + Math.abs(diff);
-    bendX = Math.min(bendX, stationX - (small?24:50));
-    const lw = (small?3:4.5) + (isHi?2:0);
+    bendX = Math.min(bendX, stationX - (small?28:50));
+    const lw = (small?3.8:4.5) + (isHi?2:0);
 
     const g = el('g', {class:'map-line', 'data-layer':layer.num, tabindex:'0', role:'button',
                        'aria-label':`Layer ${layer.num}: ${layer.name}`});
+    g.style.setProperty('--hover-color', color);
 
     let d;
     if(isHi){
@@ -130,10 +170,10 @@ function buildMap(svg, opts){
       const westX = spineX - stub;
       d = `M ${westX} ${joinY} L ${spineX} ${joinY} L ${p1x} ${p1y} L ${hubX} ${hubY} L ${bendX} ${sy} L ${stationX} ${sy}`;
 
-      g.appendChild(el('circle', {cx:westX, cy:joinY, r: small?4:5.5, fill:'#F7F4EE', stroke:color, 'stroke-width':small?2:2.6}));
-      g.appendChild(el('circle', {cx:spineX, cy:joinY, r: small?2.6:3.6, fill:'#F7F4EE', stroke:color, 'stroke-width':small?1.8:2.2}));
+      g.appendChild(el('circle', {cx:westX, cy:joinY, r: small?5:5.5, fill:'#F7F4EE', stroke:color, 'stroke-width':small?2.4:2.6}));
+      g.appendChild(el('circle', {cx:spineX, cy:joinY, r: small?3.2:3.6, fill:'#F7F4EE', stroke:color, 'stroke-width':small?2.2:2.2}));
       if(Math.abs(joinY - p1y) > (small?12:20)){
-        g.appendChild(el('circle', {cx:spineX, cy:(joinY+p1y)/2, r: small?2.6:3.6, fill:'#F7F4EE', stroke:color, 'stroke-width':small?1.8:2.2}));
+        g.appendChild(el('circle', {cx:spineX, cy:(joinY+p1y)/2, r: small?3.2:3.6, fill:'#F7F4EE', stroke:color, 'stroke-width':small?2.2:2.2}));
       }
     }
 
@@ -142,31 +182,33 @@ function buildMap(svg, opts){
 
     [0.38, 0.72].forEach(t=>{
       const tx = bendX + (stationX - bendX) * t;
-      const tickR = small?2.6:3.6;
-      g.appendChild(el('circle', {cx:tx, cy:sy, r:tickR, fill:'#F7F4EE', stroke:color, 'stroke-width':small?1.8:2.2}));
+      const tickR = small?3.2:3.6;
+      g.appendChild(el('circle', {cx:tx, cy:sy, r:tickR, fill:'#F7F4EE', stroke:color, 'stroke-width':small?2.2:2.2}));
     });
 
-    const r = isHi ? (small?9:16) : (small?6.5:11);
-    const station = el('circle', {cx:stationX, cy:sy, r:r, fill:'#fff', stroke:color, 'stroke-width':small?2.6:4});
+    const r = isHi ? (small?12:16) : (small?8.5:11);
+    const station = el('circle', {cx:stationX, cy:sy, r:r, fill:'#fff', stroke:color, 'stroke-width':small?3.2:4});
     g.appendChild(station);
 
     if(showLabels){
       const num = el('text', {x:stationX+26, y:sy+7, class:'map-num', fill:color});
       num.textContent = layer.num; g.appendChild(num);
 
-      const label = el('text', {x:stationX+54, y:sy-1, class:'map-label'+(isHi?' hi':'')});
+      const label = el('text', {x:stationX+54, y:sy-1, class:'map-label'});
       label.textContent = layer.name; g.appendChild(label);
 
       const desc = el('text', {x:stationX+54, y:sy+16, class:'map-desc'});
       desc.textContent = layer.desc; g.appendChild(desc);
 
-      if(isHi){
-        const bbox_w = layer.name.length*9.0 + 34;
-        g.insertBefore(el('rect', {x:stationX+46, y:sy-19, width:bbox_w, height:26, rx:8, class:'hi-pill'}), label);
-      }
-    } else if(isHi){
-      const num = el('text', {x:stationX, y:sy+5, 'text-anchor':'middle', class:'map-num-small', fill:color});
-      num.textContent = layer.num; g.appendChild(num);
+      const bbox_w = layer.name.length*9.0 + 34;
+      const pill = el('rect', {x:stationX+46, y:sy-19, width:bbox_w, height:26, rx:8, class:'hi-pill'});
+      pill.setAttribute('fill', '#ffffff');
+      pill.setAttribute('stroke', color);
+      g.insertBefore(pill, label);
+    } else {
+      const label = el('text', {x:stationX + r + 8, y:sy+4, class:'map-label-small'});
+      label.textContent = layer.name;
+      g.appendChild(label);
     }
 
     g.addEventListener('mouseenter', ()=> g.classList.add('hovering'));
@@ -181,9 +223,9 @@ function buildMap(svg, opts){
     svg.appendChild(g);
   });
 
-  svg.appendChild(el('circle', {cx:hubX, cy:hubY, r: small?20:29, fill:'#DCFCF3'}));
-  svg.appendChild(el('circle', {cx:hubX, cy:hubY, r: small?14:20, fill:'#fff', stroke:resolveColor('var(--navy)'), 'stroke-width':small?2.5:4}));
-  svg.appendChild(el('circle', {cx:hubX, cy:hubY, r: small?7:11, fill:resolveColor('var(--navy)')}));
+  svg.appendChild(el('circle', {cx:hubX, cy:hubY, r: small?25:29, fill:'#DCFCF3'}));
+  svg.appendChild(el('circle', {cx:hubX, cy:hubY, r: small?18:20, fill:'#fff', stroke:resolveColor('var(--navy)'), 'stroke-width':small?3:4}));
+  svg.appendChild(el('circle', {cx:hubX, cy:hubY, r: small?9:11, fill:resolveColor('var(--navy)')}));
 }
 
 function focusLayer(num){
@@ -249,6 +291,29 @@ function linkedInIcon(){
   return s;
 }
 
+function whatsappIcon(){
+  const s = el('svg', {viewBox:'0 0 24 24', fill:'currentColor'});
+  s.appendChild(el('path', {d:'M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.87.53 3.6 1.44 5.09L2 22l5.19-1.55a9.86 9.86 0 0 0 4.85 1.24c5.46 0 9.91-4.45 9.91-9.91C21.95 6.45 17.5 2 12.04 2zm0 17.9c-1.55 0-3-.42-4.24-1.16l-.3-.18-3.15.94.94-3.06-.2-.32a7.94 7.94 0 0 1-1.24-4.27c0-4.4 3.58-7.98 7.99-7.98 4.4 0 7.98 3.58 7.98 7.98 0 4.41-3.58 8.05-7.98 8.05zm4.38-5.98c-.24-.12-1.42-.7-1.64-.78-.22-.08-.38-.12-.54.12-.16.24-.62.78-.76.94-.14.16-.28.18-.52.06-1.42-.71-2.35-1.27-3.29-2.87-.25-.43.25-.4.72-1.33.08-.16.04-.3-.04-.42-.08-.12-.54-1.3-.74-1.78-.2-.48-.4-.42-.55-.42-.14 0-.3-.02-.46-.02-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2 0 1.18.86 2.32 1 2.5.14.18 1.9 2.9 4.63 3.95 2.28.88 2.28.59 2.7.55.42-.04 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28z'}));
+  return s;
+}
+
+/* Builds a small row of LinkedIn + WhatsApp share buttons for a given URL/title */
+function shareButtons(shareUrl, title, extraClass){
+  const row = document.createElement('div'); row.className = 'share-row' + (extraClass ? ' '+extraClass : '');
+  const li = document.createElement('a');
+  li.className = 'share-btn'; li.target = '_blank'; li.rel = 'noopener';
+  li.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
+  li.appendChild(linkedInIcon());
+  li.appendChild(document.createTextNode('LinkedIn'));
+  const wa = document.createElement('a');
+  wa.className = 'share-btn share-btn-wa'; wa.target = '_blank'; wa.rel = 'noopener';
+  wa.href = `https://wa.me/?text=${encodeURIComponent(title + ' — ' + shareUrl)}`;
+  wa.appendChild(whatsappIcon());
+  wa.appendChild(document.createTextNode('WhatsApp'));
+  row.append(li, wa);
+  return row;
+}
+
 /* ---------- renderers ---------- */
 function renderLayerGrid(containerId, opts){
   opts = opts || {};
@@ -258,7 +323,7 @@ function renderLayerGrid(containerId, opts){
     const color = resolveColor(layer.color);
     const card = document.createElement(opts.linkToFramework ? 'a' : 'div');
     if(opts.linkToFramework) card.href = `framework.html#layer-${layer.num}`;
-    card.className = 'layer-card' + (layer.num===5 ? ' active':'');
+    card.className = 'layer-card';
     card.dataset.layer = layer.num;
     const numEl = document.createElement('div');
     numEl.className='num'; numEl.style.color = color; numEl.textContent = layer.num;
@@ -267,6 +332,8 @@ function renderLayerGrid(containerId, opts){
     const h5 = document.createElement('h5'); h5.textContent = layer.name;
     const count = document.createElement('div'); count.className='count'; count.textContent = layer.count;
     card.append(numEl, icWrap, h5, count);
+    card.addEventListener('mouseenter', ()=>{ card.style.background = color+'1A'; card.style.borderColor = color; });
+    card.addEventListener('mouseleave', ()=>{ if(!card.classList.contains('pulse')){ card.style.background=''; card.style.borderColor=''; } });
     grid.appendChild(card);
   });
 }
@@ -278,25 +345,46 @@ function renderSignals(containerId, list, opts){
   list.forEach(sig=>{
     const layer = layerByNum(sig.layer);
     const color = resolveColor(layer.color);
-    const card = document.createElement('div'); card.className='signal-card'; card.id = sig.id;
+
+    const outer = document.createElement('div'); outer.className='signal-card'; outer.id = sig.id;
+    outer.style.setProperty('--layer-color', color);
+    const inner = document.createElement('div'); inner.className='signal-flip-inner';
+
+    /* ---- front face ---- */
+    const front = document.createElement('div'); front.className='signal-face signal-front';
     const icWrap = document.createElement('div'); icWrap.className='signal-icon';
-    icWrap.style.background = color+'22'; icWrap.style.color = color;
-    icWrap.appendChild(signalIcon(sig.icon));
+    icWrap.appendChild(layerIcon(layer.num, color));
     const num = document.createElement('div'); num.className='signal-num'; num.textContent = 'SIGNAL '+sig.num;
-    const h4 = document.createElement('h4'); h4.textContent = sig.title;
+    const h4 = document.createElement('h4'); h4.textContent = sig.title; h4.tabIndex = 0; h4.setAttribute('role','button');
+    h4.title = 'Click for more detail';
     const foot = document.createElement('div'); foot.className='signal-foot';
-    foot.innerHTML = `<span>Layer ${layer.num} · Impact: ${sig.impact}</span><span>1 min read</span>`;
-    card.append(icWrap, num, h4, foot);
+    foot.innerHTML = `<span>Layer ${layer.num}</span>`;
+    front.append(icWrap, num, h4, foot);
     if(opts.withShare){
       const shareUrl = window.location.origin + window.location.pathname.replace(/[^/]*$/, '') + `signals.html#${sig.id}`;
-      const btn = document.createElement('a');
-      btn.className = 'share-btn'; btn.target = '_blank'; btn.rel = 'noopener';
-      btn.href = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`;
-      btn.appendChild(linkedInIcon());
-      btn.appendChild(document.createTextNode('Share on LinkedIn'));
-      card.appendChild(btn);
+      front.appendChild(shareButtons(shareUrl, sig.title));
     }
-    grid.appendChild(card);
+
+    /* ---- back face ---- */
+    const back = document.createElement('div'); back.className='signal-face signal-back';
+    back.style.background = color;
+    const backNum = document.createElement('div'); backNum.className='signal-num signal-num-back'; backNum.textContent = 'SIGNAL '+sig.num;
+    const backP = document.createElement('p'); backP.className='signal-detail'; backP.textContent = sig.detail || '';
+    const backLink = document.createElement('a'); backLink.className='signal-back-link';
+    backLink.href = `framework.html#layer-${layer.num}`;
+    backLink.textContent = `See Layer ${layer.num}: ${layer.name} →`;
+    const flipBackBtn = document.createElement('button'); flipBackBtn.className='flip-back-btn'; flipBackBtn.type='button';
+    flipBackBtn.textContent = '← Back'; flipBackBtn.setAttribute('aria-label','Flip back');
+    back.append(backNum, backP, backLink, flipBackBtn);
+
+    const toggle = ()=> outer.classList.toggle('flipped');
+    h4.addEventListener('click', toggle);
+    h4.addEventListener('keydown', (e)=>{ if(e.key==='Enter' || e.key===' '){ e.preventDefault(); toggle(); } });
+    flipBackBtn.addEventListener('click', toggle);
+
+    inner.append(front, back);
+    outer.appendChild(inner);
+    grid.appendChild(outer);
   });
 }
 
@@ -349,6 +437,70 @@ function formatDate(iso){
 }
 
 /* ---------- mobile nav toggle ---------- */
+function wireSearch(){
+  const trigger = document.querySelector('.icon-btn[aria-label="Search"]');
+  if(!trigger) return;
+
+  let overlay = document.getElementById('search-overlay');
+  if(!overlay){
+    overlay = document.createElement('div');
+    overlay.id = 'search-overlay'; overlay.className = 'search-overlay';
+    overlay.innerHTML = `
+      <div class="search-box" role="dialog" aria-label="Site search">
+        <div class="search-input-row">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="search-input" placeholder="Search Briefings and Signals…" autocomplete="off">
+          <button type="button" id="search-close" aria-label="Close search">✕</button>
+        </div>
+        <div class="search-results" id="search-results"></div>
+      </div>`;
+    document.body.appendChild(overlay);
+
+    const input = overlay.querySelector('#search-input');
+    const resultsEl = overlay.querySelector('#search-results');
+    const closeBtn = overlay.querySelector('#search-close');
+
+    function close(){ overlay.classList.remove('open'); input.value=''; resultsEl.innerHTML=''; }
+    function runSearch(q){
+      q = q.trim().toLowerCase();
+      resultsEl.innerHTML = '';
+      if(!q){ return; }
+      const briefingHits = BRIEFINGS.filter(b=> b.title.toLowerCase().includes(q) || b.excerpt.toLowerCase().includes(q));
+      const signalHits = SIGNALS.filter(s=> s.title.toLowerCase().includes(q));
+      if(briefingHits.length===0 && signalHits.length===0){
+        resultsEl.innerHTML = '<div class="search-empty">No matches. Try a different term.</div>';
+        return;
+      }
+      briefingHits.forEach(b=>{
+        const layer = layerByNum(b.layer);
+        const a = document.createElement('a'); a.className='search-result';
+        a.href = b.url === '#' ? 'briefings.html#'+b.id : b.url;
+        a.innerHTML = `<span class="search-tag">Briefing</span><span class="search-title">${b.title}</span><span class="search-sub">Layer ${layer.num} · ${formatDate(b.date)}</span>`;
+        resultsEl.appendChild(a);
+      });
+      signalHits.forEach(s=>{
+        const layer = layerByNum(s.layer);
+        const a = document.createElement('a'); a.className='search-result';
+        a.href = 'signals.html#'+s.id;
+        a.innerHTML = `<span class="search-tag search-tag-signal">Signal</span><span class="search-title">${s.title}</span><span class="search-sub">Layer ${layer.num} · ${formatDate(s.date)}</span>`;
+        resultsEl.appendChild(a);
+      });
+    }
+
+    input.addEventListener('input', ()=> runSearch(input.value));
+    closeBtn.addEventListener('click', close);
+    overlay.addEventListener('click', (e)=>{ if(e.target === overlay) close(); });
+    document.addEventListener('keydown', (e)=>{
+      if(e.key === 'Escape' && overlay.classList.contains('open')) close();
+    });
+  }
+
+  trigger.addEventListener('click', ()=>{
+    overlay.classList.add('open');
+    setTimeout(()=> overlay.querySelector('#search-input').focus(), 50);
+  });
+}
+
 function wireMobileMenu(){
   const btn = document.querySelector('.menu-toggle');
   const nav = document.querySelector('nav.links');

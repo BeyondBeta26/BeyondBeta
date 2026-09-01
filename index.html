@@ -55,7 +55,7 @@
           </div>
           <div>
             <div class="label">Next briefing</div>
-            <div class="meta">Published every Tuesday · 500 words</div>
+            <div class="meta">Published every Tuesday · Readable in under 10 minutes</div>
           </div>
         </div>
       </div>
@@ -77,7 +77,7 @@
         <div class="briefing-copy">
           <p class="eyebrow">Latest briefing</p>
           <p class="layer-tag" id="featured-layer-tag"></p>
-          <h3 id="featured-title"></h3>
+          <h3 id="featured-title"><a id="featured-title-link" href="#"></a></h3>
           <p id="featured-excerpt"></p>
           <div class="briefing-meta">
             <span>
@@ -87,6 +87,7 @@
             <span id="featured-date"></span>
           </div>
           <a href="briefings.html" class="read-link" id="featured-link">Read briefing →</a>
+          <div id="featured-share" style="margin-top:14px;"></div>
         </div>
       </div>
     </div>
@@ -113,7 +114,7 @@
           <p>Explore the 8 layers underpinning technological sovereignty in Europe. Click any layer to jump to related briefings and signals.</p>
           <a href="framework.html" class="see-all">Explore the map →</a>
         </div>
-        <svg id="teaser-map" viewBox="0 0 580 220" xmlns="http://www.w3.org/2000/svg" aria-label="Compact Sovereignty Stack diagram"></svg>
+        <svg id="teaser-map" viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" aria-label="Compact Sovereignty Stack diagram"></svg>
       </div>
     </div>
   </section>
@@ -163,9 +164,10 @@
     <div>
       <h6>About</h6>
       <ul>
-        <li><a href="briefings.html">Archive</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="about.html#principles">Editorial Principles</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="site-notice.html">Site Notice</a></li>
         <li><a href="about.html#contact">Contact</a></li>
       </ul>
     </div>
@@ -185,23 +187,28 @@
 <script>
 
 buildMap(document.getElementById('hero-map'), {hubX:230, hubY:230, stationX:480, topY:30, bottomY:430, showLabels:true, small:false});
-buildMap(document.getElementById('teaser-map'), {hubX:150, hubY:110, stationX:430, topY:20, bottomY:200, showLabels:false, small:true});
+buildMap(document.getElementById('teaser-map'), {hubX:150, hubY:120, stationX:430, topY:15, bottomY:225, showLabels:false, small:true});
 renderLayerGrid('layer-grid', {linkToFramework:true});
-renderSignals('signals-grid', SIGNALS.slice(0,5), {withShare:false});
+renderSignals('signals-grid', SIGNALS.slice(0,5), {withShare:true});
 renderTeam('team-grid', TEAM);
 renderCityLights('city-lights');
 
 const featured = BRIEFINGS.find(b=>b.featured) || BRIEFINGS[0];
 const fLayer = layerByNum(featured.layer);
+const featuredUrl = featured.url === '#' ? 'briefings.html#' + featured.id : featured.url;
 document.getElementById('featured-layer-tag').textContent = `Layer ${fLayer.num} · ${fLayer.name}`;
-document.getElementById('featured-title').textContent = featured.title;
+document.getElementById('featured-title-link').textContent = featured.title;
+document.getElementById('featured-title-link').href = featuredUrl;
 document.getElementById('featured-excerpt').textContent = featured.excerpt;
 document.getElementById('featured-readtime').textContent = featured.readTime;
 document.getElementById('featured-date').textContent = formatDate(featured.date);
-document.getElementById('featured-link').href = featured.url === '#' ? 'briefings.html#' + featured.id : featured.url;
+document.getElementById('featured-link').href = featuredUrl;
+const featuredShareUrl = window.location.origin + window.location.pathname.replace(/[^/]*$/, '') + 'briefings.html#' + featured.id;
+document.getElementById('featured-share').appendChild(shareButtons(featuredShareUrl, featured.title, 'share-row-inline'));
 
 wireSubscribeForm();
 wireMobileMenu();
+wireSearch();
 </script>
 </body>
 </html>
