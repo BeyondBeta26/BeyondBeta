@@ -6,7 +6,7 @@
 <title>Authors — Beyond Beta</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 </head>
 <body>
@@ -95,10 +95,19 @@ function renderAuthorsFull(){
   const authorsWrap = document.getElementById('authors-list');
   TEAM.filter(m=>!m.guest).forEach(m=>{
     const row = document.createElement('div'); row.className='author-full'; row.id = m.id;
-    const av = document.createElement('div'); av.className='avatar'; av.style.background = m.color;
-    av.textContent = m.name.split(' ').map(w=>w[0]).join('').slice(0,2);
+    const av = document.createElement('div'); av.className='avatar';
+    if(m.photo){
+      const img = document.createElement('img'); img.src = m.photo; img.alt = m.name;
+      img.style.width='100%'; img.style.height='100%'; img.style.objectFit='cover'; img.style.borderRadius='inherit';
+      av.appendChild(img);
+    } else {
+      av.style.background = m.color;
+      av.textContent = m.name.split(' ').map(w=>w[0]).join('').slice(0,2);
+    }
     const content = document.createElement('div');
-    content.innerHTML = `<h3>${m.name}</h3><div class="role">${m.role}</div><p class="bio">${m.bio}</p><span class="li-link">in</span>`;
+    const liHref = m.linkedin ? ` href="${m.linkedin}" target="_blank" rel="noopener"` : '';
+    const liTag = m.linkedin ? 'a' : 'span';
+    content.innerHTML = `<h3>${m.name}</h3><div class="role">${m.role}</div><p class="bio">${m.bio}</p><${liTag} class="li-link"${liHref}>in</${liTag}>`;
     row.append(av, content);
     authorsWrap.appendChild(row);
   });
@@ -109,8 +118,15 @@ function renderAuthorsFull(){
     const head = document.createElement('div'); head.className='section-head';
     head.innerHTML = '<h2>Guest contributors</h2>';
     const row = document.createElement('div'); row.className='author-full'; row.id = guest.id; row.style.borderTop='none';
-    const av = document.createElement('div'); av.className='avatar'; av.style.background = guest.color;
-    av.textContent = 'GC';
+    const av = document.createElement('div'); av.className='avatar';
+    if(guest.photo){
+      const img = document.createElement('img'); img.src = guest.photo; img.alt = guest.name;
+      img.style.width='100%'; img.style.height='100%'; img.style.objectFit='cover'; img.style.borderRadius='inherit';
+      av.appendChild(img);
+    } else {
+      av.style.background = guest.color;
+      av.textContent = 'GC';
+    }
     const content = document.createElement('div');
     content.innerHTML = `<h3>${guest.name}</h3><div class="role">${guest.role}</div><p class="bio">${guest.bio}</p>`;
     row.append(av, content);
