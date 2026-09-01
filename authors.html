@@ -91,6 +91,16 @@
 <script src="shared.js"></script>
 <script>
 
+function focusChips(focusText){
+  const parts = focusText
+    .replace(/,\s*and\s+/gi, ', ')
+    .replace(/\s+and\s+/gi, ', ')
+    .split(',')
+    .map(s=>s.trim())
+    .filter(Boolean);
+  return parts.map(p=>`<span class="related-chip focus-chip">${p}</span>`).join('');
+}
+
 function renderAuthorsFull(){
   const authorsWrap = document.getElementById('authors-list');
   TEAM.filter(m=>!m.guest).forEach(m=>{
@@ -107,7 +117,7 @@ function renderAuthorsFull(){
     const content = document.createElement('div');
     const liHref = m.linkedin ? ` href="${m.linkedin}" target="_blank" rel="noopener"` : '';
     const liTag = m.linkedin ? 'a' : 'span';
-    content.innerHTML = `<h3>${m.name}</h3><div class="role">${m.role}</div><p class="bio">${m.bio}</p><${liTag} class="li-link"${liHref}>in</${liTag}>`;
+    content.innerHTML = `<h3>${m.name}</h3><div class="role">${m.role}</div><div class="author-focus">${focusChips(m.focus)}</div><p class="bio">${m.bio}</p><${liTag} class="li-link-full"${liHref}>${m.linkedin ? 'Connect on LinkedIn →' : ''}</${liTag}>`;
     row.append(av, content);
     authorsWrap.appendChild(row);
   });
@@ -128,7 +138,7 @@ function renderAuthorsFull(){
       av.textContent = 'GC';
     }
     const content = document.createElement('div');
-    content.innerHTML = `<h3>${guest.name}</h3><div class="role">${guest.role}</div><p class="bio">${guest.bio}</p>`;
+    content.innerHTML = `<h3>${guest.name}</h3><div class="role">${guest.role}</div><div class="author-focus">${focusChips(guest.focus)}</div><p class="bio">${guest.bio}</p>`;
     row.append(av, content);
     guestsWrap.append(head, row);
   }
