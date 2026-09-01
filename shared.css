@@ -15,8 +15,11 @@
   --tangerine:#EA7B26;
   --aquamarine:#00E2AD;
   --moonstone:#19A8AF;
-  --l7:#B7CEE8; --l6:#EFE54C; --l5:#DB8A31; --l4:#9FC041;
-  --l3:#6BBBCC; --l2:#A23F51; --l1:#B0D3BA; --l0:#8E9FBB;
+  --fresh-green:#96F878;
+  --violet-blue:#454AC1;
+  --slate-blue:#557382;
+  --l7:#557382; --l6:#96F878; --l5:#E8AB00; --l4:#9FC041;
+  --l3:#6BBBCC; --l2:#A23F51; --l1:#19A8AF; --l0:#8E9FBB;
   --serif:'Cormorant Garamond', Georgia, serif;
   --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
