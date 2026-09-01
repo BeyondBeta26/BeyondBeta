@@ -20,7 +20,7 @@
   --slate-blue:#557382;
   --l7:#557382; --l6:#96F878; --l5:#E8AB00; --l4:#9FC041;
   --l3:#6BBBCC; --l2:#A23F51; --l1:#19A8AF; --l0:#8E9FBB;
-  --serif:'Cormorant Garamond', Georgia, serif;
+  --serif:'Playfair Display', Georgia, serif;
   --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 *{box-sizing:border-box;}
@@ -47,7 +47,7 @@ header{
 }
 .nav-inner{display:flex; align-items:center; justify-content:space-between; padding:18px 0; position:relative;}
 .logo{display:flex; flex-direction:column; line-height:1.05;}
-.logo .word{font-family:var(--serif); font-weight:500; font-size:26px; color:var(--navy);}
+.logo .word{font-family:var(--serif); font-weight:700; font-size:26px; color:var(--navy);}
 .logo .tag{font-size:10px; font-weight:700; letter-spacing:.14em; color:var(--cobalt); margin-top:3px;}
 nav.links{display:flex; gap:34px; align-items:center;}
 nav.links a{font-size:13.5px; font-weight:600; letter-spacing:.03em; color:var(--ink); margin-right:34px;}
@@ -60,6 +60,10 @@ nav.links a:hover, nav.links a.nav-active{color:var(--cobalt);}
 }
 .btn-primary{background:var(--navy); color:#fff;}
 .btn-primary:hover{background:#1B3348;}
+.free-badge{
+  background:var(--accent-green); color:var(--navy); font-size:10px; font-weight:800;
+  letter-spacing:.04em; text-transform:uppercase; padding:3px 8px; border-radius:20px;
+}
 .btn-outline{border-color:var(--navy); color:var(--navy); background:transparent;}
 .btn-outline:hover{background:var(--navy); color:#fff;}
 .icon-btn{width:44px; height:44px; display:flex; align-items:center; justify-content:center; border-radius:50%; color:var(--ink);}
@@ -85,8 +89,8 @@ nav.links a:hover, nav.links a.nav-active{color:var(--cobalt);}
 .hero{padding:64px 0 40px;}
 .hero-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center;}
 .hero h1{
-  font-family:var(--serif); font-weight:500; font-size:48px; line-height:1.12;
-  margin:14px 0 20px; color:var(--navy);
+  font-family:var(--serif); font-weight:700; font-size:48px; line-height:1.12;
+  margin:14px 0 20px; color:#0F1F30;
 }
 .hero p.lede{font-size:16.5px; color:var(--muted); max-width:440px; line-height:1.6; margin:0 0 26px;}
 .hero .cta-row{display:flex; gap:14px; margin-bottom:28px; flex-wrap:wrap;}
@@ -234,7 +238,7 @@ footer ul a:hover{color:#fff;}
 /* ---------- SUB-PAGE HEADER (Framework / Briefings / Signals / Authors / About) ---------- */
 .page-header{padding:56px 0 30px;}
 .page-header .eyebrow{margin-bottom:10px;}
-.page-header h1{font-family:var(--serif); font-weight:500; font-size:40px; line-height:1.15; margin:0 0 16px; color:var(--navy);}
+.page-header h1{font-family:var(--serif); font-weight:700; font-size:40px; line-height:1.15; margin:0 0 16px; color:#0F1F30;}
 .page-header p.lede{font-size:16px; color:var(--muted); max-width:640px; line-height:1.6; margin:0;}
 
 @media (max-width:700px){ .page-header h1{font-size:30px;} }
