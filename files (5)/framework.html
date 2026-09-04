@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Framework — Beyond Beta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+</head>
+<body>
+<header>
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo">
+      <span class="word">Beyond Beta</span>
+      <span class="tag">AI &amp; TECHNOLOGY SOVEREIGNTY</span>
+    </a>
+    <nav class="links">
+      <a href="framework.html" class="nav-active">Framework</a>
+      <a href="briefings.html">Briefings</a>
+      <a href="signals.html">Signals</a>
+      <a href="authors.html">Authors</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="nav-right">
+      <a href="index.html#subscribe" class="btn btn-primary">Subscribe</a>
+      <button class="icon-btn" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+      <button class="menu-toggle" aria-label="Menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap page-header">
+    <p class="eyebrow">The Sovereignty Stack</p>
+    <h1>The Sovereignty Map</h1>
+    <p class="lede">A living map of the eight layers that determine who controls Europe's technological future — from raw materials to the laws and values that govern how it's all used. Every Briefing and Signal is tagged to a layer below; click any line on the map, or any layer, to see what we've covered.</p>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <svg id="big-map" viewBox="0 0 1000 620" xmlns="http://www.w3.org/2000/svg" aria-label="The Sovereignty Stack — interactive map of all eight layers"></svg>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap" id="layer-blocks"></div>
+  </section>
+</main>
+<footer>
+  <div class="wrap footer-inner">
+    <div>
+      <a href="index.html" class="logo">
+        <span class="word">Beyond Beta</span>
+        <span class="tag">AI &amp; TECHNOLOGY SOVEREIGNTY</span>
+      </a>
+      <p class="desc">Independent analysis on the systems that shape Europe's technological future.</p>
+      <p class="desc">© 2026 Beyond Beta. All rights reserved.</p>
+    </div>
+    <div>
+      <h6>Explore</h6>
+      <ul>
+        <li><a href="framework.html">Framework</a></li>
+        <li><a href="briefings.html">Briefings</a></li>
+        <li><a href="signals.html">Signals</a></li>
+        <li><a href="authors.html">Authors</a></li>
+      </ul>
+    </div>
+    <div>
+      <h6>About</h6>
+      <ul>
+        <li><a href="about.html">About</a></li>
+        <li><a href="impressum.html">Impressum</a></li>
+        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+        <li><a href="site-notice.html">Site Notice</a></li>
+        <li><a href="about.html#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div id="subscribe" class="subscribe-box">
+      <h6>Stay informed</h6>
+      <p class="desc" style="margin-top:0;">Weekly briefings and daily signals on AI, technology, and sovereignty.</p>
+      <script async data-uid="471b26de76" src="https://beyondbeta.kit.com/471b26de76/index.js"></script>
+    </div>
+  </div>
+  <div class="wrap foot-bottom">Built with care in Europe.</div>
+</footer>
+<script src="shared.js"></script>
+<script>
+
+buildMap(document.getElementById('big-map'), {hubX:260, hubY:290, stationX:560, topY:40, bottomY:560, showLabels:true, small:false});
+
+function renderLayerBlocks(){
+  const wrap = document.getElementById('layer-blocks');
+  [...LAYERS].sort((a,b)=>b.num-a.num).forEach(layer=>{
+    const color = resolveColor(layer.color);
+    const block = document.createElement('div');
+    block.className = 'layer-block';
+    block.id = `layer-${layer.num}`;
+    block.dataset.layer = layer.num;
+
+    const icWrap = document.createElement('div'); icWrap.className='lb-icon';
+    icWrap.appendChild(layerIcon(layer.num, color));
+
+    const content = document.createElement('div');
+    const numEl = document.createElement('div'); numEl.className='lb-num'; numEl.style.color = color; numEl.textContent = `LAYER ${layer.num}`;
+    const h3 = document.createElement('h3'); h3.textContent = layer.name;
+    const desc = document.createElement('p'); desc.className='lb-desc'; desc.textContent = layer.desc;
+
+    const relatedList = document.createElement('div'); relatedList.className='related-list';
+    const relatedBriefings = BRIEFINGS.filter(b=>b.layer===layer.num);
+    const relatedSignals = SIGNALS.filter(s=>s.layer===layer.num);
+
+    relatedBriefings.forEach(b=>{
+      const chip = document.createElement('a'); chip.className='related-chip';
+      chip.href = `briefings.html#${b.id}`;
+      chip.innerHTML = `<span class="kind">Briefing</span>${b.title}`;
+      relatedList.appendChild(chip);
+    });
+    relatedSignals.forEach(s=>{
+      const chip = document.createElement('a'); chip.className='related-chip';
+      chip.href = `signals.html#${s.id}`;
+      chip.innerHTML = `<span class="kind">Signal</span>${s.title}`;
+      relatedList.appendChild(chip);
+    });
+    if(relatedBriefings.length===0 && relatedSignals.length===0){
+      const chip = document.createElement('span'); chip.className='related-chip';
+      chip.textContent = 'Coverage coming soon';
+      relatedList.appendChild(chip);
+    }
+
+    content.append(numEl, h3, desc, relatedList);
+    block.append(icWrap, content);
+    wrap.appendChild(block);
+  });
+
+  const hash = window.location.hash;
+  if(hash && hash.startsWith('#layer-')){
+    const num = parseInt(hash.replace('#layer-',''), 10);
+    setTimeout(()=>focusLayer(num), 200);
+  }
+}
+renderLayerBlocks();
+
+wireSubscribeForm();
+wireMobileMenu();
+wireSearch();
+</script>
+</body>
+</html>
