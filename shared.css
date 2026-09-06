@@ -200,6 +200,7 @@ section{padding:36px 0;}
 .signal-card h4:focus-visible{outline:2px solid var(--cobalt); outline-offset:2px;}
 .signal-foot{font-size:11.5px; color:var(--muted); display:flex; justify-content:space-between; border-top:1px solid var(--border); padding-top:10px; margin-bottom:10px;}
 .signal-detail{font-size:13.5px; line-height:1.55; margin:0 0 14px; flex:1;}
+.signal-detail a{word-break:break-all;}
 .signal-back-link{font-size:12.5px; font-weight:700; color:#fff; text-decoration:underline; margin-bottom:10px;}
 .flip-back-btn{
   align-self:flex-start; background:rgba(255,255,255,.18); border:1px solid rgba(255,255,255,.5); color:#fff;

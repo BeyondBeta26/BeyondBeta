@@ -46,26 +46,26 @@ const BRIEFINGS = [
 
 /* Signals are short — a headline and a sentence, not a full write-up. */
 const SIGNALS = [
-  {id:'signal-043', num:'#043', title:'Germany expands sovereign cloud initiative', layer:3, impact:'High', icon:'cloud', date:'2026-08-27', url:'#',
-   detail:"The initiative adds new compute capacity operated under German jurisdiction, aimed at reducing reliance on non-EU cloud providers for public-sector workloads. Officials are framing it as a template other member states could adopt."},
-  {id:'signal-042', num:'#042', title:'Mistral announces new public-sector partnership', layer:4, impact:'Medium', icon:'building', date:'2026-08-26', url:'#',
-   detail:"The partnership will pilot Mistral's models inside government workflows, testing whether an EU-based model can meet public procurement requirements. It's an early signal of the AI Act's compliance-by-design pressure in practice."},
-  {id:'signal-041', num:'#041', title:'EU advances data space interoperability framework', layer:5, impact:'High', icon:'database', date:'2026-08-25', url:'#',
-   detail:"The framework sets shared technical standards so data spaces across sectors and countries can exchange data more easily. Backers hope it reduces the fragmentation that has slowed adoption of European data spaces so far."},
-  {id:'signal-040', num:'#040', title:'New European chip project enters development', layer:1, impact:'Medium', icon:'chip', date:'2026-08-22', url:'#',
-   detail:"The project focuses on a mid-node chip design rather than cutting-edge fabrication, targeting industrial and automotive applications. It reflects a more incremental approach to chip sovereignty than headline-grabbing mega-fabs."},
-  {id:'signal-039', num:'#039', title:'Cross-border AI procurement guideline published', layer:7, impact:'Medium', icon:'globe', date:'2026-08-21', url:'#',
-   detail:"The guideline standardizes how public bodies across member states evaluate AI vendors, including data handling and explainability requirements. It's intended to make joint procurement between countries more practical."},
-  {id:'signal-038', num:'#038', title:'France and Germany align on IaaS certification scheme', layer:3, impact:'High', icon:'database', date:'2026-08-19', url:'#',
-   detail:"The two governments agreed on a shared certification baseline for infrastructure-as-a-service providers, easing the path for smaller cloud vendors to qualify for public contracts in both markets. It's a modest but concrete step toward mutual recognition."},
-  {id:'signal-037', num:'#037', title:'Open-weight model release cited in Commission draft', layer:6, impact:'Medium', icon:'building', date:'2026-08-18', url:'#',
-   detail:"The citation suggests EU policymakers increasingly treat open-weight releases as a benchmark for transparency, not just a developer-community trend. It could shape how future guidance defines model documentation standards."},
-  {id:'signal-036', num:'#036', title:'Undersea cable resilience fund announced', layer:2, impact:'High', icon:'globe', date:'2026-08-14', url:'#',
-   detail:"The fund is meant to speed up repair capacity and diversify cable routes after a string of accidental and suspected sabotage incidents. It's a direct response to concerns about Europe's dependence on a handful of vulnerable chokepoints."},
-  {id:'signal-035', num:'#035', title:'Rare earths recycling target set for 2030', layer:0, impact:'Low', icon:'chip', date:'2026-08-12', url:'#',
-   detail:"The 2030 target covers a specific share of rare earths used in electronics and EVs, sourced from recycled material rather than new mining. It's a small but symbolic step toward reducing import dependence on a handful of supplier countries."},
-  {id:'signal-034', num:'#034', title:'Platform interoperability complaint filed with regulator', layer:4, impact:'Medium', icon:'cloud', date:'2026-08-08', url:'#',
-   detail:"The complaint alleges a major platform is making it difficult for competitors to plug into its ecosystem — a test case for how strictly interoperability rules will be enforced. The outcome could set precedent for similar disputes still in the pipeline."}
+  {id:'signal-fantasy-m-a-the-recipe-for-a-european-champio', num:'#020', layer:2, date:'2026-09-03', title:'Fantasy M&A: the recipe for a European champion', url:'https://www.ft.com/content/d4e5956a-200c-47d1-9241-f15f495c2cf2?emailId=a7dc0af3-eacf-495c-ab8f-316a7b72c9f6&segmentId=7d033110-c776-45bf-e9f2-7c3a03d2dd26&syn-25a6b1a6=1'},
+  {id:'signal-deutsche-telekom-konzern-rudert-bei-glasfaser', num:'#019', layer:2, date:'2026-08-13', title:'Deutsche Telekom: Konzern rudert bei Glasfaserausbau zurück', url:'https://www.handelsblatt.com/unternehmen/dienstleister/deutsche-telekom-konzern-rudert-bei-glasfaserausbau-zurueck/100247079.html'},
+  {id:'signal-europe-must-create-an-ai-money-mobilisation-m', num:'#018', layer:6, date:'2026-08-06', title:'Europe must create an AI money-mobilisation machine', url:'https://www.ft.com/content/8a3c87ca-53e0-4ce0-9c9d-c1f9c461f6b0?syn-25a6b1a6=1'},
+  {id:'signal-seltene-erden-die-chinesen-werden-uns-nicht-h', num:'#017', layer:0, date:'2026-07-10', title:'Seltene Erden: „Die Chinesen werden uns nicht helfen, die Nato aufzurüsten“', url:'https://www.handelsblatt.com/unternehmen/mittelstand/familienunternehmer/seltene-erden-die-chinesen-werden-uns-nicht-helfen-die-nato-aufzuruesten/100233380.html'},
+  {id:'signal-competing-for-inputs-how-the-european-union-c', num:'#016', layer:0, date:'2026-07-09', title:'Competing for inputs: how the European Union can improve critical raw materials supply security', url:'https://www.bruegel.org/policy-brief/competing-inputs-how-european-union-can-improve-critical-raw-materials-supply-security'},
+  {id:'signal-cloud-sektor-br-ssel-will-aws-und-microsoft-a', num:'#015', layer:4, date:'2026-06-25', title:'Cloud-Sektor: Brüssel will AWS und Microsoft Azure strenger überwachen', url:'https://www.handelsblatt.com/politik/international/cloud-sektor-bruessel-will-aws-und-microsoft-azure-strenger-ueberwachen/100235703.html'},
+  {id:'signal-rohstoffe-g7-wollen-obergrenze-f-r-rohstoffim', num:'#014', layer:0, date:'2026-06-17', title:'Rohstoffe: G7 wollen Obergrenze für Rohstoffimporte aus China erreichen', url:'https://www.handelsblatt.com/politik/international/rohstoffe-g7-wollen-obergrenze-fuer-rohstoffimporte-aus-china-erreichen/100233834.html'},
+  {id:'signal-europe-2031-what-getting-ai-wrong-means-for-u', num:'#013', layer:7, date:'2026-06-11', title:'Europe 2031: What getting AI wrong means for us', url:'https://europe2031.ai'},
+  {id:'signal-the-technological-sovereignty-package-will-st', num:'#012', layer:7, date:'2026-06-03', title:'The Technological Sovereignty Package will strengthen Europe’s competitiveness, strategic autonomy and geoeconomic position.', url:'https://ec.europa.eu/commission/presscorner/api/files/attachment/882568/Factsheet%20Tech%20Sovereignty.pdf'},
+  {id:'signal-halbleiter-eu-kommission-will-chip-k-ufe-bei-', num:'#010', layer:1, date:'2026-05-28', title:'Halbleiter: EU-Kommission will Chip-Käufe bei europäischen Start-ups fördern', url:'https://www.handelsblatt.com/politik/international/halbleiter-eu-kommission-will-chip-kaeufe-bei-europaeischen-start-ups-foerdern/100228792.html'},
+  {id:'signal-digitale-souver-nit-t-eu-will-souver-ne-cloud', num:'#011', layer:4, date:'2026-05-28', title:'Digitale Souveränität: EU will souveräne Clouds bevorzugen', url:'https://www.handelsblatt.com/politik/international/digitale-souveraenitaet-eu-will-souveraene-clouds-bevorzugen/100222639.html'},
+  {id:'signal-europe-needs-a-strategy-to-close-the-artifici', num:'#009', layer:3, date:'2026-05-19', title:'Europe needs a strategy to close the artificial intelligence compute gap', url:'https://www.bruegel.org/analysis/europe-needs-strategy-close-artificial-intelligence-compute-gap'},
+  {id:'signal-revamping-europe-s-chips-strategy-indispensab', num:'#008', layer:1, date:'2026-05-13', title:'Revamping Europe\'s chips strategy: indispensability, not self-sufficiency', url:'https://www.bruegel.org/analysis/revamping-europes-chips-strategy-indispensability-not-self-sufficiency'},
+  {id:'signal-cloud-souver-n-mit-us-hilfe-neues-angebot-von', num:'#007', layer:3, date:'2026-05-06', title:'Cloud: Souverän mit US-Hilfe – neues Angebot von Amazon und Vodafone', url:'https://www.handelsblatt.com/technik/it-internet/cloud-souveraen-mit-us-hilfe-neues-angebot-von-amazon-und-vodafone/100222509.html'},
+  {id:'signal-the-common-european-energy-data-space-and-the', num:'#006', layer:5, date:'2026-04-30', title:'The Common European Energy Data Space and the Energy Networks', url:'https://link.springer.com/article/10.1007/s40518-026-00288-x'},
+  {id:'signal-rechenzentren-ki-kapazit-ten-vervierfachen-re', num:'#005', layer:3, date:'2026-03-17', title:'Rechenzentren: KI-Kapazitäten vervierfachen – Regierung plant Aufholjagd', url:'https://www.handelsblatt.com/politik/deutschland/rechenzentren-ki-kapazitaeten-vervierfachen-regierung-plant-aufholjagd/100209102.html'},
+  {id:'signal-the-case-for-a-european-union-digital-enforce', num:'#004', layer:7, date:'2026-03-01', title:'The case for a European Union digital enforcement authority', url:'https://www.bruegel.org/sites/default/files/2026-03/PB%2005%202026.pdf'},
+  {id:'signal-unterseekabel-monopol-europas-sicherheit-wird', num:'#003', layer:2, date:'2025-12-10', title:'Unterseekabel-Monopol: Europas Sicherheit wird am Meeresboden entschieden', url:'https://www.handelsblatt.com/politik/deutschland/unterseekabel-monopol-europas-sicherheit-wird-am-meeresboden-entschieden/100181439.html'},
+  {id:'signal-the-european-union-needs-more-than-the-digita', num:'#002', layer:5, date:'2025-12-08', title:'The European Union needs more than the digital omnibus to make digital services competitive', url:'https://www.bruegel.org/analysis/european-union-needs-more-digital-omnibus-make-digital-services-competitive'},
+  {id:'signal-what-the-eurostack-initiative-proposes', num:'#001', layer:7, date:'2025-05-01', title:'What the Eurostack Initiative proposes', url:'https://eurostack.eu/wp-content/uploads/2025/08/eurostack-white-paper-final-19-05-25-3.pdf'}
 ];
 
 const TEAM = [
@@ -369,7 +369,10 @@ function renderSignals(containerId, list, opts){
     const back = document.createElement('div'); back.className='signal-face signal-back';
     back.style.background = color;
     const backNum = document.createElement('div'); backNum.className='signal-num signal-num-back'; backNum.textContent = 'SIGNAL '+sig.num;
-    const backP = document.createElement('p'); backP.className='signal-detail'; backP.textContent = sig.detail || '';
+    const backP = document.createElement('p'); backP.className='signal-detail';
+    const srcLink = document.createElement('a'); srcLink.href = sig.url; srcLink.target='_blank'; srcLink.rel='noopener';
+    srcLink.textContent = sig.url; srcLink.style.color = '#fff'; srcLink.style.textDecoration = 'underline';
+    backP.appendChild(srcLink);
     const backLink = document.createElement('a'); backLink.className='signal-back-link';
     backLink.href = `framework.html#layer-${layer.num}`;
     backLink.textContent = `See Layer ${layer.num}: ${layer.name} →`;
