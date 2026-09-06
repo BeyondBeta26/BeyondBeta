@@ -15,58 +15,7 @@ const LAYERS = [
   {num:7, name:'European system of laws and values', desc:'Regulation, rights, ethics, public interest', color:'var(--l7)', count:'6 essays'}
 ];
 
-/* Every Briefing is ~500 words, published weekly. "featured:true" marks the
-   one shown on the homepage — move the flag to a newer entry each week. */
-const BRIEFINGS = [
-  {id:'europe-missing-ai-advantage', title:"Europe's Missing AI Advantage", layer:5,
-   excerpt:"Why data infrastructure — not model size — may determine Europe's position in the next phase of AI competition.",
-   date:'2026-08-26', readTime:'4 min read', featured:true, url:'#'},
-  {id:'chip-sovereignty-illusion', title:'The Chip Sovereignty Illusion', layer:1,
-   excerpt:"Europe's semiconductor investments are real, but the dependency they're meant to fix is deeper than fab capacity.",
-   date:'2026-08-19', readTime:'4 min read', featured:false, url:'#'},
-  {id:'iaas-without-hyperscalers', title:'Can Europe Run IaaS Without Hyperscalers?', layer:3,
-   excerpt:'Sovereign cloud projects keep launching. Almost none of them answer the question of who actually operates them.',
-   date:'2026-08-12', readTime:'5 min read', featured:false, url:'#'},
-  {id:'ai-act-enforcement-gap', title:'The AI Act Enforcement Gap', layer:7,
-   excerpt:'Rules on paper are not rules in practice. What early enforcement patterns reveal about the law that was supposed to lead the world.',
-   date:'2026-08-05', readTime:'4 min read', featured:false, url:'#'},
-  {id:'platform-lockin-public-sector', title:'Platform Lock-in in the Public Sector', layer:4,
-   excerpt:'Migrating a ministry off a hyperscaler platform is not a procurement decision. It is a multi-year infrastructure project.',
-   date:'2026-07-29', readTime:'5 min read', featured:false, url:'#'},
-  {id:'open-source-models-policy', title:'What Open-Weight Models Mean for Policy', layer:6,
-   excerpt:"Open-weight releases scramble the assumptions behind most of Europe's AI governance drafting.",
-   date:'2026-07-22', readTime:'4 min read', featured:false, url:'#'},
-  {id:'5g-backbone-dependencies', title:"Who Actually Owns Europe's 5G Backbone?", layer:2,
-   excerpt:'Vendor diversity rules changed the headlines. They changed the ownership structure much less.',
-   date:'2026-07-15', readTime:'4 min read', featured:false, url:'#'},
-  {id:'materials-diplomacy', title:'Materials Diplomacy Is Industrial Policy', layer:0,
-   excerpt:'Rare earth agreements are being negotiated like trade deals. They should be read like security guarantees.',
-   date:'2026-07-08', readTime:'5 min read', featured:false, url:'#'}
-];
 
-/* Signals are short — a headline and a sentence, not a full write-up. */
-const SIGNALS = [
-  {id:'signal-fantasy-m-a-the-recipe-for-a-european-champio', num:'#020', layer:2, date:'2026-09-03', title:'Fantasy M&A: the recipe for a European champion', url:'https://www.ft.com/content/d4e5956a-200c-47d1-9241-f15f495c2cf2?emailId=a7dc0af3-eacf-495c-ab8f-316a7b72c9f6&segmentId=7d033110-c776-45bf-e9f2-7c3a03d2dd26&syn-25a6b1a6=1'},
-  {id:'signal-deutsche-telekom-konzern-rudert-bei-glasfaser', num:'#019', layer:2, date:'2026-08-13', title:'Deutsche Telekom: Konzern rudert bei Glasfaserausbau zurück', url:'https://www.handelsblatt.com/unternehmen/dienstleister/deutsche-telekom-konzern-rudert-bei-glasfaserausbau-zurueck/100247079.html'},
-  {id:'signal-europe-must-create-an-ai-money-mobilisation-m', num:'#018', layer:6, date:'2026-08-06', title:'Europe must create an AI money-mobilisation machine', url:'https://www.ft.com/content/8a3c87ca-53e0-4ce0-9c9d-c1f9c461f6b0?syn-25a6b1a6=1'},
-  {id:'signal-seltene-erden-die-chinesen-werden-uns-nicht-h', num:'#017', layer:0, date:'2026-07-10', title:'Seltene Erden: „Die Chinesen werden uns nicht helfen, die Nato aufzurüsten“', url:'https://www.handelsblatt.com/unternehmen/mittelstand/familienunternehmer/seltene-erden-die-chinesen-werden-uns-nicht-helfen-die-nato-aufzuruesten/100233380.html'},
-  {id:'signal-competing-for-inputs-how-the-european-union-c', num:'#016', layer:0, date:'2026-07-09', title:'Competing for inputs: how the European Union can improve critical raw materials supply security', url:'https://www.bruegel.org/policy-brief/competing-inputs-how-european-union-can-improve-critical-raw-materials-supply-security'},
-  {id:'signal-cloud-sektor-br-ssel-will-aws-und-microsoft-a', num:'#015', layer:4, date:'2026-06-25', title:'Cloud-Sektor: Brüssel will AWS und Microsoft Azure strenger überwachen', url:'https://www.handelsblatt.com/politik/international/cloud-sektor-bruessel-will-aws-und-microsoft-azure-strenger-ueberwachen/100235703.html'},
-  {id:'signal-rohstoffe-g7-wollen-obergrenze-f-r-rohstoffim', num:'#014', layer:0, date:'2026-06-17', title:'Rohstoffe: G7 wollen Obergrenze für Rohstoffimporte aus China erreichen', url:'https://www.handelsblatt.com/politik/international/rohstoffe-g7-wollen-obergrenze-fuer-rohstoffimporte-aus-china-erreichen/100233834.html'},
-  {id:'signal-europe-2031-what-getting-ai-wrong-means-for-u', num:'#013', layer:7, date:'2026-06-11', title:'Europe 2031: What getting AI wrong means for us', url:'https://europe2031.ai'},
-  {id:'signal-the-technological-sovereignty-package-will-st', num:'#012', layer:7, date:'2026-06-03', title:'The Technological Sovereignty Package will strengthen Europe’s competitiveness, strategic autonomy and geoeconomic position.', url:'https://ec.europa.eu/commission/presscorner/api/files/attachment/882568/Factsheet%20Tech%20Sovereignty.pdf'},
-  {id:'signal-halbleiter-eu-kommission-will-chip-k-ufe-bei-', num:'#010', layer:1, date:'2026-05-28', title:'Halbleiter: EU-Kommission will Chip-Käufe bei europäischen Start-ups fördern', url:'https://www.handelsblatt.com/politik/international/halbleiter-eu-kommission-will-chip-kaeufe-bei-europaeischen-start-ups-foerdern/100228792.html'},
-  {id:'signal-digitale-souver-nit-t-eu-will-souver-ne-cloud', num:'#011', layer:4, date:'2026-05-28', title:'Digitale Souveränität: EU will souveräne Clouds bevorzugen', url:'https://www.handelsblatt.com/politik/international/digitale-souveraenitaet-eu-will-souveraene-clouds-bevorzugen/100222639.html'},
-  {id:'signal-europe-needs-a-strategy-to-close-the-artifici', num:'#009', layer:3, date:'2026-05-19', title:'Europe needs a strategy to close the artificial intelligence compute gap', url:'https://www.bruegel.org/analysis/europe-needs-strategy-close-artificial-intelligence-compute-gap'},
-  {id:'signal-revamping-europe-s-chips-strategy-indispensab', num:'#008', layer:1, date:'2026-05-13', title:'Revamping Europe\'s chips strategy: indispensability, not self-sufficiency', url:'https://www.bruegel.org/analysis/revamping-europes-chips-strategy-indispensability-not-self-sufficiency'},
-  {id:'signal-cloud-souver-n-mit-us-hilfe-neues-angebot-von', num:'#007', layer:3, date:'2026-05-06', title:'Cloud: Souverän mit US-Hilfe – neues Angebot von Amazon und Vodafone', url:'https://www.handelsblatt.com/technik/it-internet/cloud-souveraen-mit-us-hilfe-neues-angebot-von-amazon-und-vodafone/100222509.html'},
-  {id:'signal-the-common-european-energy-data-space-and-the', num:'#006', layer:5, date:'2026-04-30', title:'The Common European Energy Data Space and the Energy Networks', url:'https://link.springer.com/article/10.1007/s40518-026-00288-x'},
-  {id:'signal-rechenzentren-ki-kapazit-ten-vervierfachen-re', num:'#005', layer:3, date:'2026-03-17', title:'Rechenzentren: KI-Kapazitäten vervierfachen – Regierung plant Aufholjagd', url:'https://www.handelsblatt.com/politik/deutschland/rechenzentren-ki-kapazitaeten-vervierfachen-regierung-plant-aufholjagd/100209102.html'},
-  {id:'signal-the-case-for-a-european-union-digital-enforce', num:'#004', layer:7, date:'2026-03-01', title:'The case for a European Union digital enforcement authority', url:'https://www.bruegel.org/sites/default/files/2026-03/PB%2005%202026.pdf'},
-  {id:'signal-unterseekabel-monopol-europas-sicherheit-wird', num:'#003', layer:2, date:'2025-12-10', title:'Unterseekabel-Monopol: Europas Sicherheit wird am Meeresboden entschieden', url:'https://www.handelsblatt.com/politik/deutschland/unterseekabel-monopol-europas-sicherheit-wird-am-meeresboden-entschieden/100181439.html'},
-  {id:'signal-the-european-union-needs-more-than-the-digita', num:'#002', layer:5, date:'2025-12-08', title:'The European Union needs more than the digital omnibus to make digital services competitive', url:'https://www.bruegel.org/analysis/european-union-needs-more-digital-omnibus-make-digital-services-competitive'},
-  {id:'signal-what-the-eurostack-initiative-proposes', num:'#001', layer:7, date:'2025-05-01', title:'What the Eurostack Initiative proposes', url:'https://eurostack.eu/wp-content/uploads/2025/08/eurostack-white-paper-final-19-05-25-3.pdf'}
-];
 
 const TEAM = [
   {id:'kirsten-rulf', name:'Kirsten Rulf', role:'Editor-in-Chief', focus:'AI policy, digital regulation, and institutional strategy', color:'#19A8AF', guest:false,
@@ -82,6 +31,141 @@ const TEAM = [
    photo:'team/guest-illustration.svg',
    bio:'Beyond Beta periodically publishes guest essays from practitioners, researchers, and policymakers working directly on technology sovereignty across Europe.'}
 ];
+
+/* ============================================================
+   LIVE DATA LOADING
+   BRIEFINGS: loaded from briefings.json (edit that file + push to
+   GitHub to add a weekly briefing).
+   SIGNALS: loaded from a published Google Sheet CSV, refreshed on
+   every page load -- no GitHub commit needed. Ask Claude for the
+   setup steps if this needs to be changed.
+   ============================================================ */
+
+let BRIEFINGS = [];
+let SIGNALS = [];
+
+// TODO: replace with your published Google Sheet CSV URL
+// (Google Sheet > File > Share > Publish to web > select the Signals
+// tab > CSV > copy the link it gives you)
+const SIGNALS_SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTlZKv4JBXqErNaEhVjksW9Ta61qSSbibm4uwTR0a5C1TP6eZxurnIHYagvWYwpbA/pub?output=csv';
+
+function parseCSV(text){
+  const rows = [];
+  let row = [], field = '', inQuotes = false;
+  for(let i = 0; i < text.length; i++){
+    const c = text[i], next = text[i+1];
+    if(inQuotes){
+      if(c === '"' && next === '"'){ field += '"'; i++; }
+      else if(c === '"'){ inQuotes = false; }
+      else { field += c; }
+    } else {
+      if(c === '"'){ inQuotes = true; }
+      else if(c === ','){ row.push(field); field = ''; }
+      else if(c === '\r'){ /* ignore */ }
+      else if(c === '\n'){ row.push(field); rows.push(row); row = []; field = ''; }
+      else { field += c; }
+    }
+  }
+  if(field.length || row.length){ row.push(field); rows.push(row); }
+  if(!rows.length) return [];
+  const headers = rows.shift().map(h => h.trim());
+  return rows
+    .filter(r => r.some(c => c.trim() !== ''))
+    .map(r => {
+      const obj = {};
+      headers.forEach((h, idx) => obj[h] = (r[idx] || '').trim());
+      return obj;
+    });
+}
+
+function parseFlexibleDate(s){
+  s = (s || '').trim();
+  let m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
+  if(m) return `${m[1]}-${m[2].padStart(2,'0')}-${m[3].padStart(2,'0')}`;
+  m = s.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})/);
+  if(m) return `${m[3]}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`;
+  m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);
+  if(m) return `${m[3]}-${m[1].padStart(2,'0')}-${m[2].padStart(2,'0')}`;
+  return s;
+}
+
+function slugify(s){
+  return 'signal-' + s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,45);
+}
+
+async function loadBriefings(){
+  try {
+    const res = await fetch('briefings.json', {cache:'no-store'});
+    BRIEFINGS = await res.json();
+  } catch(e){
+    console.error('Could not load briefings.json:', e);
+  }
+  return BRIEFINGS;
+}
+
+async function loadSignals(){
+  try {
+    if(!SIGNALS_SHEET_CSV_URL || SIGNALS_SHEET_CSV_URL.includes('PASTE_YOUR')){
+      console.warn('SIGNALS_SHEET_CSV_URL is not set yet -- see the comment above it in shared.js.');
+      return SIGNALS;
+    }
+    const res = await fetch(SIGNALS_SHEET_CSV_URL, {cache:'no-store'});
+    const text = await res.text();
+    const rows = parseCSV(text);
+    const mapped = rows
+      .filter(r => (r['Approved'] || '').trim().toLowerCase() === 'yes' && r['Headline / Titel'] && r['Link'])
+      .map(r => ({
+        layer: parseInt(r['Layer-Nr'], 10),
+        date: parseFlexibleDate(r['Signal-Datum']),
+        title: r['Headline / Titel'].trim(),
+        url: r['Link'].trim(),
+        source: (r['Quelle'] || '').trim()
+      }))
+      .filter(s => !isNaN(s.layer) && s.date && s.title && s.url);
+    mapped.sort((a,b) => new Date(a.date) - new Date(b.date));
+    mapped.forEach((s, i) => {
+      s.num = '#' + String(i+1).padStart(3,'0');
+      s.id = slugify(s.title);
+    });
+    mapped.reverse();
+    SIGNALS = mapped;
+  } catch(e){
+    console.error('Could not load signals from the Google Sheet:', e);
+  }
+  return SIGNALS;
+}
+
+async function loadSharedData(){
+  await Promise.all([loadBriefings(), loadSignals()]);
+}
+
+
+/* ---------- lightweight markdown ----------
+   Supports: **bold**, *italic*, [link](url), and blank-line-separated
+   paragraphs. Use ## / ### for subheadings inside a briefing body. */
+function escapeHtml(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function inlineMarkdown(s){
+  s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  s = s.replace(/(^|[^*])\*([^*]+?)\*(?!\*)/g, '$1<em>$2</em>');
+  s = s.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  return s;
+}
+function renderMarkdown(md){
+  if(!md) return '';
+  const blocks = md.trim().split(/\n\s*\n/);
+  return blocks.map(block => {
+    const b = block.trim();
+    const h = b.match(/^(#{2,3})\s+(.*)$/);
+    if(h){
+      const level = h[1].length + 1;
+      return `<h${level}>${inlineMarkdown(escapeHtml(h[2]))}</h${level}>`;
+    }
+    const inner = inlineMarkdown(escapeHtml(b).replace(/\n/g, '<br>'));
+    return `<p>${inner}</p>`;
+  }).join('\n');
+}
 
 /* ---------- generic svg helpers ---------- */
 const SVGNS = "http://www.w3.org/2000/svg";
@@ -477,7 +561,7 @@ function wireSearch(){
       briefingHits.forEach(b=>{
         const layer = layerByNum(b.layer);
         const a = document.createElement('a'); a.className='search-result';
-        a.href = b.url === '#' ? 'briefings.html#'+b.id : b.url;
+        a.href = 'briefing.html?id='+b.id;
         a.innerHTML = `<span class="search-tag">Briefing</span><span class="search-title">${b.title}</span><span class="search-sub">Layer ${layer.num} · ${formatDate(b.date)}</span>`;
         resultsEl.appendChild(a);
       });

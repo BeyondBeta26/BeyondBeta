@@ -3,11 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Signals — Beyond Beta</title>
+<title>Signals Archive — Beyond Beta</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
+<style>
+.archive-filters{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:8px;}
+.archive-filters input, .archive-filters select{
+  padding:10px 14px; border-radius:7px; border:1px solid var(--border); background:#fff;
+  font-family:var(--sans); font-size:14px; color:var(--ink);
+}
+.archive-filters input{flex:1; min-width:200px;}
+.archive-filters select{min-width:170px;}
+.archive-count{font-size:13px; color:var(--muted); margin:0 0 24px;}
+.archive-empty{color:var(--muted); font-size:14.5px; padding:30px 0;}
+@media (max-width:600px){ .archive-filters{flex-direction:column;} .archive-filters input, .archive-filters select{width:100%;} }
+</style>
 </head>
 <body>
 <header>
@@ -37,13 +49,20 @@
 
 <main>
   <div class="wrap page-header">
-    <p class="eyebrow">Recent</p>
-    <h1>Signals</h1>
-    <p class="lede">Short, dated, and built to be shared — Signals flag what's moving across the Sovereignty Stack as it happens, one screen at a time. Showing the 20 most recent. <a href="signals-archive.html" style="color:var(--cobalt); font-weight:700;">Browse the full searchable archive →</a></p>
+    <p class="eyebrow"><a href="signals.html" style="color:inherit;">← Recent signals</a></p>
+    <h1>Signals archive</h1>
+    <p class="lede">Every signal that's aged out of the recent 20, searchable by layer, keyword, and publication.</p>
   </div>
   <section>
     <div class="wrap">
-      <div class="signals-grid full" id="signals-grid-full"></div>
+      <div class="archive-filters">
+        <input type="text" id="filter-keyword" placeholder="Search by keyword…">
+        <select id="filter-layer"><option value="">All layers</option></select>
+        <select id="filter-source"><option value="">All publications</option></select>
+      </div>
+      <p class="archive-count" id="archive-count">Loading…</p>
+      <div class="signals-grid full" id="archive-grid"></div>
+      <p class="archive-empty" id="archive-empty" style="display:none;">No signals match those filters.</p>
     </div>
   </section>
 </main>
@@ -91,13 +110,64 @@
 <script src="shared.js"></script>
 <script>
 
+let archiveSignals = [];
+
+function populateFilters(){
+  const layerSelect = document.getElementById('filter-layer');
+  LAYERS.forEach(l => {
+    const opt = document.createElement('option');
+    opt.value = l.num;
+    opt.textContent = `Layer ${l.num} · ${l.name}`;
+    layerSelect.appendChild(opt);
+  });
+
+  const sources = [...new Set(archiveSignals.map(s => s.source).filter(Boolean))].sort();
+  const sourceSelect = document.getElementById('filter-source');
+  sources.forEach(src => {
+    const opt = document.createElement('option');
+    opt.value = src;
+    opt.textContent = src;
+    sourceSelect.appendChild(opt);
+  });
+}
+
+function applyFilters(){
+  const kw = document.getElementById('filter-keyword').value.trim().toLowerCase();
+  const layerVal = document.getElementById('filter-layer').value;
+  const srcVal = document.getElementById('filter-source').value;
+
+  const filtered = archiveSignals.filter(s =>
+    (kw === '' || s.title.toLowerCase().includes(kw)) &&
+    (layerVal === '' || s.layer === parseInt(layerVal, 10)) &&
+    (srcVal === '' || s.source === srcVal)
+  );
+
+  const grid = document.getElementById('archive-grid');
+  grid.innerHTML = '';
+  const empty = document.getElementById('archive-empty');
+  if(filtered.length === 0){
+    empty.style.display = '';
+  } else {
+    empty.style.display = 'none';
+    renderSignals('archive-grid', filtered, {withShare:true});
+  }
+  document.getElementById('archive-count').textContent =
+    `${filtered.length} signal${filtered.length === 1 ? '' : 's'}${archiveSignals.length !== filtered.length ? ` of ${archiveSignals.length} archived` : ' archived'}`;
+}
+
 wireSubscribeForm();
 wireMobileMenu();
 
 loadSharedData().then(()=>{
-  const sortedSignals = [...SIGNALS].sort((a,b)=> new Date(b.date) - new Date(a.date));
-  renderSignals('signals-grid-full', sortedSignals.slice(0,20), {withShare:true});
+  const sorted = [...SIGNALS].sort((a,b)=> new Date(b.date) - new Date(a.date));
+  archiveSignals = sorted.slice(20);
+  populateFilters();
+  applyFilters();
   wireSearch();
+
+  document.getElementById('filter-keyword').addEventListener('input', applyFilters);
+  document.getElementById('filter-layer').addEventListener('change', applyFilters);
+  document.getElementById('filter-source').addEventListener('change', applyFilters);
 });
 </script>
 </body>

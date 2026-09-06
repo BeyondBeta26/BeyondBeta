@@ -189,26 +189,29 @@
 buildMap(document.getElementById('hero-map'), {hubX:230, hubY:230, stationX:480, topY:30, bottomY:430, showLabels:true, small:false});
 buildMap(document.getElementById('teaser-map'), {hubX:150, hubY:120, stationX:430, topY:15, bottomY:225, showLabels:false, small:true});
 renderLayerGrid('layer-grid', {linkToFramework:true});
-renderSignals('signals-grid', SIGNALS.slice(0,5), {withShare:true});
 renderTeam('team-grid', TEAM);
 renderCityLights('city-lights');
-
-const featured = BRIEFINGS.find(b=>b.featured) || BRIEFINGS[0];
-const fLayer = layerByNum(featured.layer);
-const featuredUrl = featured.url === '#' ? 'briefings.html#' + featured.id : featured.url;
-document.getElementById('featured-layer-tag').textContent = `Layer ${fLayer.num} · ${fLayer.name}`;
-document.getElementById('featured-title-link').textContent = featured.title;
-document.getElementById('featured-title-link').href = featuredUrl;
-document.getElementById('featured-excerpt').textContent = featured.excerpt;
-document.getElementById('featured-readtime').textContent = featured.readTime;
-document.getElementById('featured-date').textContent = formatDate(featured.date);
-document.getElementById('featured-link').href = featuredUrl;
-const featuredShareUrl = window.location.origin + window.location.pathname.replace(/[^/]*$/, '') + 'briefings.html#' + featured.id;
-document.getElementById('featured-share').appendChild(shareButtons(featuredShareUrl, featured.title, 'share-row-inline'));
-
 wireSubscribeForm();
 wireMobileMenu();
-wireSearch();
+
+loadSharedData().then(()=>{
+  renderSignals('signals-grid', SIGNALS.slice(0,5), {withShare:true});
+
+  const featured = BRIEFINGS.find(b=>b.featured) || BRIEFINGS[0];
+  const fLayer = layerByNum(featured.layer);
+  const featuredUrl = 'briefing.html?id=' + featured.id;
+  document.getElementById('featured-layer-tag').textContent = `Layer ${fLayer.num} · ${fLayer.name}`;
+  document.getElementById('featured-title-link').textContent = featured.title;
+  document.getElementById('featured-title-link').href = featuredUrl;
+  document.getElementById('featured-excerpt').innerHTML = inlineMarkdown(escapeHtml(featured.excerpt));
+  document.getElementById('featured-readtime').textContent = featured.readTime;
+  document.getElementById('featured-date').textContent = formatDate(featured.date);
+  document.getElementById('featured-link').href = featuredUrl;
+  const featuredShareUrl = window.location.origin + window.location.pathname.replace(/[^/]*$/, '') + 'briefings.html#' + featured.id;
+  document.getElementById('featured-share').appendChild(shareButtons(featuredShareUrl, featured.title, 'share-row-inline'));
+
+  wireSearch();
+});
 </script>
 </body>
 </html>

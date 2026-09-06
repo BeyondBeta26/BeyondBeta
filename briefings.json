@@ -1,0 +1,90 @@
+[
+  {
+    "id": "europe-missing-ai-advantage",
+    "title": "Europe's Missing AI Advantage",
+    "layer": 5,
+    "excerpt": "Why data infrastructure — not model size — may determine Europe's position in the next phase of AI competition.",
+    "date": "2026-08-26",
+    "readTime": "4 min read",
+    "featured": true,
+    "url": "#",
+    "body": "Why data infrastructure — not model size — may determine Europe's position in the next phase of AI competition.\n\n## The argument in brief\n\nMost coverage of AI sovereignty fixates on model scale: who has the biggest cluster, the most parameters, the fastest chips. This misses where Europe's actual leverage lies.\n\n**European data spaces** — the shared, interoperable data infrastructure being built across health, energy, mobility, and other sectors — could become the raw material advantage that model size alone can't buy. Access to well-governed, high-quality European data is not something a larger US or Chinese model can simply route around.\n\n### Why this matters now\n\nThe window is narrow. As [the EU's own Technological Sovereignty Package](https://ec.europa.eu) makes clear, the regulatory scaffolding for data spaces is already being built — but the actual data-sharing agreements that would make them useful are still thin on the ground.\n\nIf European institutions treat data spaces as a compliance checkbox rather than a genuine competitive asset, the advantage disappears before it's realised. *That's the real risk* — not that Europe fails to build a frontier model, but that it fails to make the one asset it does have actually usable.\n\nReplace this placeholder text with your real ~500-word briefing. Formatting reference: **bold**, *italic*, a [link](https://example.com), \"## \" for a subheading, and a blank line between paragraphs."
+  },
+  {
+    "id": "chip-sovereignty-illusion",
+    "title": "The Chip Sovereignty Illusion",
+    "layer": 1,
+    "excerpt": "Europe's semiconductor investments are real, but the dependency they're meant to fix is deeper than fab capacity.",
+    "date": "2026-08-19",
+    "readTime": "4 min read",
+    "featured": false,
+    "url": "#",
+    "body": "[Add your ~500-word briefing here, written in Markdown.]\n\nUse **double asterisks** for bold, *single asterisks* for italic, and [link text](https://example.com) for links. Leave a blank line between paragraphs — that's what breaks the text into separate paragraphs on the page. Use \"## \" at the start of a line for a subheading if the piece needs one."
+  },
+  {
+    "id": "iaas-without-hyperscalers",
+    "title": "Can Europe Run IaaS Without Hyperscalers?",
+    "layer": 3,
+    "excerpt": "Sovereign cloud projects keep launching. Almost none of them answer the question of who actually operates them.",
+    "date": "2026-08-12",
+    "readTime": "5 min read",
+    "featured": false,
+    "url": "#",
+    "body": "[Add your ~500-word briefing here, written in Markdown.]\n\nUse **double asterisks** for bold, *single asterisks* for italic, and [link text](https://example.com) for links. Leave a blank line between paragraphs — that's what breaks the text into separate paragraphs on the page. Use \"## \" at the start of a line for a subheading if the piece needs one."
+  },
+  {
+    "id": "ai-act-enforcement-gap",
+    "title": "The AI Act Enforcement Gap",
+    "layer": 7,
+    "excerpt": "Rules on paper are not rules in practice. What early enforcement patterns reveal about the law that was supposed to lead the world.",
+    "date": "2026-08-05",
+    "readTime": "4 min read",
+    "featured": false,
+    "url": "#",
+    "body": "[Add your ~500-word briefing here, written in Markdown.]\n\nUse **double asterisks** for bold, *single asterisks* for italic, and [link text](https://example.com) for links. Leave a blank line between paragraphs — that's what breaks the text into separate paragraphs on the page. Use \"## \" at the start of a line for a subheading if the piece needs one."
+  },
+  {
+    "id": "platform-lockin-public-sector",
+    "title": "Platform Lock-in in the Public Sector",
+    "layer": 4,
+    "excerpt": "Migrating a ministry off a hyperscaler platform is not a procurement decision. It is a multi-year infrastructure project.",
+    "date": "2026-07-29",
+    "readTime": "5 min read",
+    "featured": false,
+    "url": "#",
+    "body": "[Add your ~500-word briefing here, written in Markdown.]\n\nUse **double asterisks** for bold, *single asterisks* for italic, and [link text](https://example.com) for links. Leave a blank line between paragraphs — that's what breaks the text into separate paragraphs on the page. Use \"## \" at the start of a line for a subheading if the piece needs one."
+  },
+  {
+    "id": "open-source-models-policy",
+    "title": "What Open-Weight Models Mean for Policy",
+    "layer": 6,
+    "excerpt": "Open-weight releases scramble the assumptions behind most of Europe's AI governance drafting.",
+    "date": "2026-07-22",
+    "readTime": "4 min read",
+    "featured": false,
+    "url": "#",
+    "body": "[Add your ~500-word briefing here, written in Markdown.]\n\nUse **double asterisks** for bold, *single asterisks* for italic, and [link text](https://example.com) for links. Leave a blank line between paragraphs — that's what breaks the text into separate paragraphs on the page. Use \"## \" at the start of a line for a subheading if the piece needs one."
+  },
+  {
+    "id": "5g-backbone-dependencies",
+    "title": "Who Actually Owns Europe's 5G Backbone?",
+    "layer": 2,
+    "excerpt": "Vendor diversity rules changed the headlines. They changed the ownership structure much less.",
+    "date": "2026-07-15",
+    "readTime": "4 min read",
+    "featured": false,
+    "url": "#",
+    "body": "[Add your ~500-word briefing here, written in Markdown.]\n\nUse **double asterisks** for bold, *single asterisks* for italic, and [link text](https://example.com) for links. Leave a blank line between paragraphs — that's what breaks the text into separate paragraphs on the page. Use \"## \" at the start of a line for a subheading if the piece needs one."
+  },
+  {
+    "id": "materials-diplomacy",
+    "title": "Materials Diplomacy Is Industrial Policy",
+    "layer": 0,
+    "excerpt": "Rare earth agreements are being negotiated like trade deals. They should be read like security guarantees.",
+    "date": "2026-07-08",
+    "readTime": "5 min read",
+    "featured": false,
+    "url": "#",
+    "body": "[Add your ~500-word briefing here, written in Markdown.]\n\nUse **double asterisks** for bold, *single asterisks* for italic, and [link text](https://example.com) for links. Leave a blank line between paragraphs — that's what breaks the text into separate paragraphs on the page. Use \"## \" at the start of a line for a subheading if the piece needs one."
+  }
+]

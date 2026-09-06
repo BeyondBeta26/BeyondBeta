@@ -148,11 +148,13 @@ function renderLayerBlocks(){
     setTimeout(()=>focusLayer(num), 200);
   }
 }
-renderLayerBlocks();
-
 wireSubscribeForm();
 wireMobileMenu();
-wireSearch();
+
+loadSharedData().then(()=>{
+  renderLayerBlocks();
+  wireSearch();
+});
 </script>
 </body>
 </html>
