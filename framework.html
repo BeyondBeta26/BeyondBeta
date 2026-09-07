@@ -4,6 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Framework — Beyond Beta</title>
+<meta name="description" content="The Sovereignty Stack: an eight-layer model mapping who controls Europe's technological future, from raw materials to the laws and values that govern it.">
+<link rel="canonical" href="https://beyondbeta.eu/framework.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Beyond Beta">
+<meta property="og:title" content="Framework — Beyond Beta">
+<meta property="og:description" content="The Sovereignty Stack: an eight-layer model mapping who controls Europe's technological future, from raw materials to the laws and values that govern it.">
+<meta property="og:url" content="https://beyondbeta.eu/framework.html">
+<meta property="og:image" content="https://beyondbeta.eu/images/og-image.png">
+<meta property="og:image:width" content="1731">
+<meta property="og:image:height" content="909">
+<meta property="og:image:alt" content="Beyond Beta — AI &amp; Technology Sovereignty">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Framework — Beyond Beta">
+<meta name="twitter:description" content="The Sovereignty Stack: an eight-layer model mapping who controls Europe's technological future, from raw materials to the laws and values that govern it.">
+<meta name="twitter:image" content="https://beyondbeta.eu/images/og-image.png">
 <link rel="stylesheet" href="shared.css">
 </head>
 <body>
@@ -135,13 +152,16 @@ function renderLayerBlocks(){
 
     relatedBriefings.forEach(b=>{
       const chip = document.createElement('a'); chip.className='related-chip';
-      chip.href = `briefings.html#${b.id}`;
+      chip.href = `briefings/${b.id}.html`;
       chip.innerHTML = `<span class="kind">Briefing</span>${b.title}`;
       relatedList.appendChild(chip);
     });
     relatedSignals.forEach(s=>{
       const chip = document.createElement('a'); chip.className='related-chip';
-      chip.href = `signals.html#${s.id}`;
+      const sortedSignals = [...SIGNALS].sort((a,b)=> new Date(b.date) - new Date(a.date));
+      const idx = sortedSignals.findIndex(x=>x.id===s.id);
+      const page = idx < 20 ? 'signals.html' : 'signals-archive.html';
+      chip.href = `${page}#${s.id}`;
       chip.innerHTML = `<span class="kind">Signal</span>${s.title}`;
       relatedList.appendChild(chip);
     });
