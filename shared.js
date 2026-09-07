@@ -80,7 +80,12 @@ function escapeHtml(s){
 function inlineMarkdown(s){
   s = s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
   s = s.replace(/(^|[^*])\*([^*]+?)\*(?!\*)/g, '$1<em>$2</em>');
-  s = s.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener">$1</a>');
+  s = s.replace(/\[([^\]]+)\]\(([^\s)]+)\)/g, (m, text, url) => {
+    const isExternal = /^https?:\/\//.test(url);
+    return isExternal
+      ? `<a href="${url}" target="_blank" rel="noopener">${text}</a>`
+      : `<a href="${url}">${text}</a>`;
+  });
   return s;
 }
 function renderMarkdown(md){
@@ -406,6 +411,28 @@ function renderSignals(containerId, list, opts){
   });
 }
 
+function renderBriefingRows(containerId, list){
+  const wrap = document.getElementById(containerId);
+  if(!wrap) return;
+  list.forEach(b=>{
+    const layer = layerByNum(b.layer);
+    const row = document.createElement('div');
+    row.className = 'briefing-row';
+    row.id = b.id;
+    const left = document.createElement('div');
+    const h3 = document.createElement('h3');
+    const link = document.createElement('a'); link.href = 'briefing.html?id=' + b.id; link.textContent = b.title; link.style.color='inherit';
+    h3.appendChild(link);
+    const p = document.createElement('p'); p.innerHTML = inlineMarkdown(escapeHtml(b.excerpt));
+    const meta = document.createElement('div'); meta.className = 'meta';
+    meta.textContent = `Layer ${layer.num} · ${layer.name} — ${formatDate(b.date)}`;
+    left.append(h3, p, meta);
+    const right = document.createElement('div'); right.className = 'word-count'; right.textContent = b.readTime;
+    row.append(left, right);
+    wrap.appendChild(row);
+  });
+}
+
 function renderTeam(containerId, list, opts){
   opts = opts || {};
   const grid = document.getElementById(containerId);
@@ -531,11 +558,6 @@ function wireMobileMenu(){
 }
 
 /* ---------- subscribe form (footer, present on every page) ---------- */
-function wireSubscribeForm(){
-  const form = document.getElementById('subscribe-form');
-  if(!form) return;
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-    document.getElementById('subscribe-note').textContent = "Thanks! (Placeholder — connect this form's action to your Kit form endpoint to actually collect subscribers.)";
-  });
-}
+/* Subscribe form is now Kit's own embed (see footer on every page) --
+   Kit's ck.5.js script handles submission, success/error states, and
+   the double opt-in flow directly. No custom JS needed here anymore. */

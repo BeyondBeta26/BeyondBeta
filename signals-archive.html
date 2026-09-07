@@ -95,11 +95,17 @@
     <div id="subscribe" class="subscribe-box">
       <h6>Stay informed</h6>
       <p class="desc" style="margin-top:0;">Weekly briefings and daily signals on AI, technology, and sovereignty.</p>
-      <form id="subscribe-form">
-        <input type="email" required placeholder="Your email address">
-        <button type="submit">Subscribe</button>
+      <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+      <form action="https://app.kit.com/forms/9870682/subscriptions" class="seva-form formkit-form" method="post" data-sv-form="9870682" data-uid="471b26de76" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;message&quot;,&quot;success_message&quot;:&quot;Success - welcome to the Beyond Beta Briefings! Now check your email to confirm your subscription.&quot;,&quot;redirect_url&quot;:&quot;&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;modal&quot;:{&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;powered_by&quot;:{&quot;show&quot;:true,&quot;url&quot;:&quot;https://kit.com/features/forms?utm_campaign=poweredby&amp;utm_content=form&amp;utm_medium=referral&amp;utm_source=dynamic&quot;},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;},&quot;slide_in&quot;:{&quot;display_in&quot;:&quot;bottom_right&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15},&quot;sticky_bar&quot;:{&quot;display_in&quot;:&quot;top&quot;,&quot;trigger&quot;:&quot;timer&quot;,&quot;scroll_percentage&quot;:null,&quot;timer&quot;:5,&quot;devices&quot;:&quot;all&quot;,&quot;show_once_every&quot;:15}},&quot;version&quot;:&quot;5&quot;}">
+        <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+        <div data-element="fields" class="seva-fields formkit-fields">
+          <input class="formkit-input" name="email_address" aria-label="Email Address" placeholder="Your email address" required="" type="email">
+          <button data-element="submit" class="formkit-submit formkit-submit" type="submit">
+            <div class="formkit-spinner"><div></div><div></div><div></div></div>
+            <span>Subscribe</span>
+          </button>
+        </div>
       </form>
-      <p class="subscribe-note" id="subscribe-note">This form is a placeholder — wire it to your Kit form action to go live.</p>
     </div>
   </div>
   <div class="wrap foot-bottom">Built with care in Europe.</div>
@@ -152,7 +158,6 @@ function applyFilters(){
     `${filtered.length} signal${filtered.length === 1 ? '' : 's'}${archiveSignals.length !== filtered.length ? ` of ${archiveSignals.length} archived` : ' archived'}`;
 }
 
-wireSubscribeForm();
 wireMobileMenu();
 
 loadSharedData().then(()=>{

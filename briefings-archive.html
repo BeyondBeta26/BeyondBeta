@@ -3,8 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Briefings — Beyond Beta</title>
+<title>Briefings Archive — Beyond Beta</title>
 <link rel="stylesheet" href="shared.css">
+<style>
+.archive-filters{display:flex; gap:12px; flex-wrap:wrap; margin-bottom:8px;}
+.archive-filters input, .archive-filters select{
+  padding:10px 14px; border-radius:7px; border:1px solid var(--border); background:#fff;
+  font-family:var(--sans); font-size:14px; color:var(--ink);
+}
+.archive-filters input{flex:1; min-width:200px;}
+.archive-filters select{min-width:170px;}
+.archive-count{font-size:13px; color:var(--muted); margin:0 0 24px;}
+.archive-empty{color:var(--muted); font-size:14.5px; padding:30px 0;}
+@media (max-width:600px){ .archive-filters{flex-direction:column;} .archive-filters input, .archive-filters select{width:100%;} }
+</style>
 </head>
 <body>
 <header>
@@ -34,12 +46,20 @@
 
 <main>
   <div class="wrap page-header">
-    <p class="eyebrow">Recent</p>
-    <h1>Briefings</h1>
-    <p class="lede">500-word briefings, published every week, each mapped to a layer of the Sovereignty Stack. Showing the 12 most recent. <a href="briefings-archive.html" style="color:var(--cobalt); font-weight:700;">Browse the full searchable archive →</a></p>
+    <p class="eyebrow"><a href="briefings.html" style="color:inherit;">← Recent briefings</a></p>
+    <h1>Briefings archive</h1>
+    <p class="lede">Every briefing that's aged out of the recent list, searchable by layer and keyword.</p>
   </div>
   <section>
-    <div class="wrap" id="briefings-list"></div>
+    <div class="wrap">
+      <div class="archive-filters">
+        <input type="text" id="filter-keyword" placeholder="Search by keyword…">
+        <select id="filter-layer"><option value="">All layers</option></select>
+      </div>
+      <p class="archive-count" id="archive-count">Loading…</p>
+      <div id="archive-list"></div>
+      <p class="archive-empty" id="archive-empty" style="display:none;">No briefings match those filters.</p>
+    </div>
   </section>
 </main>
 <footer>
@@ -92,12 +112,51 @@
 <script src="shared.js"></script>
 <script>
 
+let archiveBriefings = [];
+
+function populateFilters(){
+  const layerSelect = document.getElementById('filter-layer');
+  LAYERS.forEach(l => {
+    const opt = document.createElement('option');
+    opt.value = l.num;
+    opt.textContent = `Layer ${l.num} · ${l.name}`;
+    layerSelect.appendChild(opt);
+  });
+}
+
+function applyFilters(){
+  const kw = document.getElementById('filter-keyword').value.trim().toLowerCase();
+  const layerVal = document.getElementById('filter-layer').value;
+
+  const filtered = archiveBriefings.filter(b =>
+    (kw === '' || b.title.toLowerCase().includes(kw) || b.excerpt.toLowerCase().includes(kw)) &&
+    (layerVal === '' || b.layer === parseInt(layerVal, 10))
+  );
+
+  const list = document.getElementById('archive-list');
+  list.innerHTML = '';
+  const empty = document.getElementById('archive-empty');
+  if(filtered.length === 0){
+    empty.style.display = '';
+  } else {
+    empty.style.display = 'none';
+    renderBriefingRows('archive-list', filtered);
+  }
+  document.getElementById('archive-count').textContent =
+    `${filtered.length} briefing${filtered.length === 1 ? '' : 's'}${archiveBriefings.length !== filtered.length ? ` of ${archiveBriefings.length} archived` : ' archived'}`;
+}
+
 wireMobileMenu();
 
 loadSharedData().then(()=>{
   const sorted = [...BRIEFINGS].sort((a,b)=> new Date(b.date) - new Date(a.date));
-  renderBriefingRows('briefings-list', sorted.slice(0,12));
+  archiveBriefings = sorted.slice(12);
+  populateFilters();
+  applyFilters();
   wireSearch();
+
+  document.getElementById('filter-keyword').addEventListener('input', applyFilters);
+  document.getElementById('filter-layer').addEventListener('change', applyFilters);
 });
 </script>
 </body>
