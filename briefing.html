@@ -42,6 +42,15 @@
     </div>
   </div>
 </header>
+<div class="search-overlay" id="subscribe-overlay">
+  <div class="search-box" role="dialog" aria-label="Subscribe to Beyond Beta" style="max-width:420px;">
+    <div class="search-input-row" style="justify-content:space-between;">
+      <strong style="color:var(--navy); font-size:15px;">Subscribe to Beyond Beta</strong>
+      <button type="button" id="subscribe-modal-close" aria-label="Close" style="border:none; background:none; color:var(--muted); font-size:16px; cursor:pointer; padding:4px;">✕</button>
+    </div>
+    <div id="subscribe-modal-content" style="padding:20px;"></div>
+  </div>
+</div>
 
 <main>
   <div class="wrap page-header">
@@ -106,6 +115,7 @@
 <script>
 
 wireMobileMenu();
+wireSubscribeModal();
 
 loadSharedData().then(()=>{
   wireSearch();

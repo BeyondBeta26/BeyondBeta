@@ -70,6 +70,17 @@ async function loadSharedData(){
   await Promise.all([loadBriefings(), loadSignals()]);
 }
 
+/* Search results link with a #hash to a specific item on a page whose list
+   renders asynchronously (after loadSharedData). The browser's native
+   scroll-to-anchor only fires once, before that content exists, so this
+   re-does it manually once the target page has finished rendering. */
+function scrollToHash(){
+  if(!window.location.hash) return;
+  const id = decodeURIComponent(window.location.hash.slice(1));
+  const el = document.getElementById(id);
+  if(el) setTimeout(()=> el.scrollIntoView({behavior:'smooth', block:'center'}), 50);
+}
+
 
 /* ---------- lightweight markdown ----------
    Supports: **bold**, *italic*, [link](url), and blank-line-separated
@@ -494,7 +505,7 @@ function wireSearch(){
       <div class="search-box" role="dialog" aria-label="Site search">
         <div class="search-input-row">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" id="search-input" placeholder="Search Briefings and Signals…" autocomplete="off">
+          <input type="text" id="search-input" placeholder="Search Briefings, Signals, and Authors…" autocomplete="off">
           <button type="button" id="search-close" aria-label="Close search">✕</button>
         </div>
         <div class="search-results" id="search-results"></div>
@@ -512,10 +523,12 @@ function wireSearch(){
       if(!q){ return; }
       const briefingHits = BRIEFINGS.filter(b=> b.title.toLowerCase().includes(q) || b.excerpt.toLowerCase().includes(q));
       const signalHits = SIGNALS.filter(s=> s.title.toLowerCase().includes(q));
-      if(briefingHits.length===0 && signalHits.length===0){
+      const authorHits = TEAM.filter(m=> !m.guest && (m.name.toLowerCase().includes(q) || m.focus.toLowerCase().includes(q) || m.role.toLowerCase().includes(q)));
+      if(briefingHits.length===0 && signalHits.length===0 && authorHits.length===0){
         resultsEl.innerHTML = '<div class="search-empty">No matches. Try a different term.</div>';
         return;
       }
+      const sortedSignals = [...SIGNALS].sort((a,b)=> new Date(b.date) - new Date(a.date));
       briefingHits.forEach(b=>{
         const layer = layerByNum(b.layer);
         const a = document.createElement('a'); a.className='search-result';
@@ -525,9 +538,17 @@ function wireSearch(){
       });
       signalHits.forEach(s=>{
         const layer = layerByNum(s.layer);
+        const idx = sortedSignals.findIndex(x=>x.id===s.id);
+        const page = idx < 20 ? 'signals.html' : 'signals-archive.html';
         const a = document.createElement('a'); a.className='search-result';
-        a.href = 'signals.html#'+s.id;
+        a.href = page+'#'+s.id;
         a.innerHTML = `<span class="search-tag search-tag-signal">Signal</span><span class="search-title">${s.title}</span><span class="search-sub">Layer ${layer.num} · ${formatDate(s.date)}</span>`;
+        resultsEl.appendChild(a);
+      });
+      authorHits.forEach(m=>{
+        const a = document.createElement('a'); a.className='search-result';
+        a.href = 'authors.html#'+m.id;
+        a.innerHTML = `<span class="search-tag search-tag-author">Author</span><span class="search-title">${m.name}</span><span class="search-sub">${m.role}</span>`;
         resultsEl.appendChild(a);
       });
     }
@@ -555,6 +576,43 @@ function wireMobileMenu(){
     btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
   nav.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=> nav.classList.remove('open')));
+}
+
+/* Every "Subscribe" button/link across the site points to index.html#subscribe
+   (the footer form) -- this intercepts all of them and, instead of duplicating
+   the Kit form (which risks the embed script conflicting with itself), moves
+   the ONE real footer form into a popup on click, and moves it back to the
+   footer when closed. There is only ever one live instance of the form. */
+function wireSubscribeModal(){
+  const overlay = document.getElementById('subscribe-overlay');
+  const modalContent = document.getElementById('subscribe-modal-content');
+  const subscribeBox = document.querySelector('footer .subscribe-box');
+  if(!overlay || !modalContent || !subscribeBox) return;
+
+  const originalParent = subscribeBox.parentNode;
+  const originalNextSibling = subscribeBox.nextSibling;
+  const closeBtn = document.getElementById('subscribe-modal-close');
+
+  const open = ()=>{
+    modalContent.appendChild(subscribeBox);
+    overlay.classList.add('open');
+  };
+  const close = ()=>{
+    if(originalNextSibling){
+      originalParent.insertBefore(subscribeBox, originalNextSibling);
+    } else {
+      originalParent.appendChild(subscribeBox);
+    }
+    overlay.classList.remove('open');
+  };
+  if(closeBtn) closeBtn.addEventListener('click', close);
+  overlay.addEventListener('click', (e)=>{ if(e.target === overlay) close(); });
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape' && overlay.classList.contains('open')) close();
+  });
+  document.querySelectorAll('a[href="index.html#subscribe"]').forEach(btn=>{
+    btn.addEventListener('click', (e)=>{ e.preventDefault(); open(); });
+  });
 }
 
 /* ---------- subscribe form (footer, present on every page) ---------- */
