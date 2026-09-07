@@ -1,60 +1,25 @@
-# Beyond Beta website — file guide
+# Font files needed here
 
-This is now a real multi-page site: 6 HTML pages sharing one stylesheet and
-one script file, so editing content in `shared.js` updates it everywhere at
-once instead of needing to hand-edit every page.
+`shared.css` expects these 10 files in this folder (same names, `.woff2` format):
 
-## Files
+- playfair-display-500.woff2
+- playfair-display-600.woff2
+- playfair-display-700.woff2
+- playfair-display-800.woff2
+- playfair-display-900.woff2
+- playfair-display-italic-500.woff2
+- inter-400.woff2
+- inter-500.woff2
+- inter-600.woff2
+- inter-700.woff2
 
-| File | What it is |
-|---|---|
-| `index.html` | Homepage |
-| `framework.html` | The Sovereignty Map — full interactive map + archive grouped by layer |
-| `briefings.html` | Full archive of weekly Briefings |
-| `signals.html` | Full archive of Signals, each with a "Share on LinkedIn" button |
-| `authors.html` | Full editorial team bios + guest contributors |
-| `about.html` | Mission, method, independence, contact |
-| `shared.css` | All styling — colors, fonts, layout, components |
-| `shared.js` | **All content lives here**: layer names, Briefings, Signals, team bios — plus the code that draws the map and renders every list |
+## How to get them (2 minutes)
 
-Upload all 8 files to the same folder in your GitHub repo (keep the
-filenames exactly as they are — the pages link to each other by name, and
-they all load `shared.css` and `shared.js` from the same folder).
+1. Go to **https://gwfh.mranftl.com/fonts** (Google Webfonts Helper — a well-known open-source tool for exactly this).
+2. Search **Playfair Display**. Under "Select styles," tick: 500, 600, 700, 800, 900 (regular) and 500 (italic).
+3. Under "Copy CSS," set the format checkbox to **woff2 only** (uncheck the rest — smaller download, and it's the only format `shared.css` references).
+4. Click **Download files**, unzip, and rename each file to match the list above (the tool's own filenames include a version string, e.g. `playfair-display-v37-latin-500.woff2` — just drop everything before the weight number).
+5. Repeat steps 2–4 for **Inter**, selecting weights 400, 500, 600, 700 (regular only, no italic needed).
+6. Drop all 10 renamed files into this `fonts/` folder and push to GitHub.
 
-## What's safe to edit yourself, and where
-
-Open `shared.js`, find the block you want, edit the text between quotes.
-Everything below is plain content, not code logic — as long as you keep
-the punctuation (commas, quotes, curly braces) intact around what you
-change, you can't break anything by editing the words.
-
-- **`const LAYERS = [...]`** — the 8 Sovereignty Stack layers: name,
-  description, color, essay count. Changes here update the map, the
-  homepage layer grid, and the Framework page everywhere at once.
-- **`const BRIEFINGS = [...]`** — every Briefing. Add a new one by copying
-  an existing `{...}` block and changing the values. Set `featured:true`
-  on the one you want shown on the homepage (only one should be `true`
-  at a time). `url:'#'` is a placeholder — replace it with the real Kit
-  post link once one exists, and the "Read briefing" / "Share" links
-  will use it automatically.
-- **`const SIGNALS = [...]`** — every Signal, same pattern as Briefings.
-- **`const TEAM = [...]`** — editors and guest contributors. Set
-  `guest:true` for guest contributors so they're grouped separately on
-  the Authors page.
-
-## What's *not* simple text editing
-
-Colors, spacing, the map's line-drawing logic, and page layout live in
-`shared.css` and the functions in `shared.js` (below the data arrays).
-Editing those safely means understanding CSS/JS syntax — worth asking me
-to change rather than hand-editing, since one misplaced bracket can break
-every page at once (since they all share these two files).
-
-## Known placeholders to swap out before this feels "real"
-
-- Every `url:'#'` in `BRIEFINGS` and `SIGNALS` — should point to the
-  actual Kit post once published.
-- The subscribe form (bottom of every page) shows a placeholder message
-  on submit — needs to be pointed at your real Kit form action.
-- Team bios and guest contributor text are illustrative — worth a pass
-  once real long-form bios exist.
+Until these files are added, the site still works fine — it just falls back to Georgia/system-serif and system-sans (the fallback fonts already built into `shared.css`), so nothing breaks in the meantime.

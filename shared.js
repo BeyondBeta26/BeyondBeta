@@ -6,21 +6,21 @@
 
 const LAYERS = [
   {num:0, name:'Raw materials and intermediate products', desc:'Rare earths, silicon, raw materials', color:'var(--l0)', count:'5 essays'},
-  {num:1, name:'Components', desc:'Chips, semiconductors, hardware', color:'var(--l1)', count:'6 essays'},
-  {num:2, name:'Communications infrastructure', desc:'Connectivity, backbone, edge, 5G/6G', color:'var(--l2)', count:'7 essays'},
-  {num:3, name:'Infrastructure-as-a-Service (IaaS)', desc:'Compute, storage, facilities, energy', color:'var(--l3)', count:'10 essays'},
-  {num:4, name:'Platform-as-a-Service (PaaS)', desc:'Cloud, platforms, APIs, middleware', color:'var(--l4)', count:'8 essays'},
-  {num:5, name:'European data spaces', desc:'Secure, interoperable, trusted data infrastructure', color:'var(--l5)', count:'9 essays'},
-  {num:6, name:'Software technology', desc:'AI models, algorithms, open source, tools', color:'var(--l6)', count:'7 essays'},
-  {num:7, name:'European system of laws and values', desc:'Regulation, rights, ethics, public interest', color:'var(--l7)', count:'6 essays'}
+  {num:1, name:'Components', desc:'Microchips, sensors, actuators, production and enabling technologies, 3D printing, QC, AI', color:'var(--l1)', count:'6 essays'},
+  {num:2, name:'Communications infrastructure', desc:'Broadband infrastructure, mobile networks (Open RAN), Galileo navigation, 5G/6G', color:'var(--l2)', count:'7 essays'},
+  {num:3, name:'Infrastructure-as-a-Service (IaaS)', desc:'Virtual, distributed cloud ecosystems, edge technology, QC, AI-HPC centers', color:'var(--l3)', count:'10 essays'},
+  {num:4, name:'Platform-as-a-Service (PaaS)', desc:'Application and development ecosystems B2B and B2C (abstraction layer, container technology), QC, AI, IoT', color:'var(--l4)', count:'8 essays'},
+  {num:5, name:'(European) Data spaces', desc:'E.g. for mobility, health, public sector, secure, interoperable, trusted data infrastructure', color:'var(--l5)', count:'9 essays'},
+  {num:6, name:'Software technology', desc:'App development, Office, ERP, AI, middleware, robotics software, blockchain, algorithms, open source, VR/AR, QC', color:'var(--l6)', count:'7 essays'},
+  {num:7, name:'(European) system of laws and values', desc:'Cybersecurity, cryptography, e-identity, certification, regulations, standards, ethics', color:'var(--l7)', count:'6 essays'}
 ];
 
 
 
 const TEAM = [
-  {id:'kirsten-rulf', name:'Kirsten Rulf', role:'Editor-in-Chief', focus:'AI policy, digital regulation, and institutional strategy', color:'#19A8AF', guest:false,
+  {id:'kirsten-rulf', name:'Kirsten Rulf', role:'Research Lead', focus:'AI transformation, digital sovereignty, and institutional strategy, digital policy, competitiveness', color:'#19A8AF', guest:false,
    photo:'team/kirsten-rulf.jpg', linkedin:'https://www.linkedin.com/in/kirstenrulf/',
-   bio:'Kirsten Rulf is a Partner and Associate Director in BCG\'s Berlin office. Until April 2023, she served as Head of the "Fundamental Questions of Digital Policy" unit at the German Federal Chancellery, advising former Chancellors Angela Merkel and Olaf Scholz on national and international digital policy. During her tenure at the Federal Chancellery, she was responsible for the German federal government\'s AI and data strategies, as well as for negotiating the EU regulatory framework for digital transformation — including the AI Act, the Data Act, the Digital Services Act, and the Digital Markets Act. Prior to her time in government, Kirsten Rulf taught Artificial Intelligence and Compliance at Harvard Law School. In addition to her work at BCG, she currently is an advisor to the EU Commission\'s AI Office and DG Connect, she teaches at Yale University and is a 2023 UC Berkeley Tech Policy Fellow. Kirsten holds an MPP from the Harvard Kennedy School, two Master\'s degrees from the University of Oxford, and was a 2022 Yale World Fellow.'},
+   bio:'Kirsten Rulf is a Partner and Associate Director in BCG\'s Berlin office, currently on a two-months annual leave which she uses for research on tech sovereignty with an academic partner. At BCG she focusses on tech sovereignty programs and AI risk management. In addition to her work at BCG, she currently is an advisor to the EU Commission\'s AI Office and DG Connect, she teaches at Yale University and is a 2023 UC Berkeley Tech Policy Fellow. Until April 2023, she served as Head of the "Fundamental Questions of Digital Policy" unit at the German Federal Chancellery, advising former Chancellors Angela Merkel and Olaf Scholz on national and international digital policy. During her tenure at the Federal Chancellery, she was responsible for the German federal government\'s AI and data strategies, as well as for negotiating the EU regulatory framework for digital transformation, including the AI Act, the Data Act, the Digital Services Act, and the Digital Markets Act. Prior to her time in government, Kirsten Rulf taught Artificial Intelligence and Compliance at Harvard Law School. Kirsten holds an MPP from the Harvard Kennedy School, two Master\'s degrees from the University of Oxford, and was a 2022 Yale World Fellow.'},
   {id:'hanna-mrugalla', name:'Hanna Mrugalla', role:'Research Fellow', focus:'Geoeconomics, digital sovereignty, and EU competitiveness', color:'#EA7B26', guest:false,
    photo:'team/hanna-mrugalla.jpg', linkedin:'https://www.linkedin.com/in/hanna-mrugalla-483347202/',
    bio:'Studying International Political Economy at LSE, Hanna is passionate about exploring the role Europe will play in geoeconomic competition with the U.S. and China. She is particularly drawn to the complexities of digital sovereignty and its implications for European competitiveness, an interest that has developed through her professional experience in German politics and public sector consulting. Holding a Bachelor\'s degree in Philosophy, Politics and Economics, she values interdisciplinary debate and learning from new perspectives.'},
@@ -29,7 +29,7 @@ const TEAM = [
    bio:'Marie studies International Business Administration and Entrepreneurship with a minor in Business Psychology at Leuphana University Lüneburg. She is particularly interested in exploring how artificial intelligence is reshaping economic decision-making and public policy. As Finance & Founder\'s Associate at a Hamburg-based startup building AI-powered predictive maintenance solutions, she gets to see these dynamics play out first-hand.'},
   {id:'guest-contributor', name:'Guest Contributor', role:'External Perspective', focus:'Expert voices from across Europe', color:'#A79C8B', guest:true,
    photo:'team/guest-illustration.svg',
-   bio:'Beyond Beta periodically publishes guest essays from practitioners, researchers, and policymakers working directly on technology sovereignty across Europe.'}
+   bio:'Beyond Beta periodically publishes guest essays from practitioners, researchers, and policymakers working directly on technology sovereignty across Europe. If this sounds like you, please get in touch!'}
 ];
 
 /* ============================================================
