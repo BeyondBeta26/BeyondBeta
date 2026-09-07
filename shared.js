@@ -430,9 +430,10 @@ function renderBriefingRows(containerId, list){
     const row = document.createElement('div');
     row.className = 'briefing-row';
     row.id = b.id;
+    row.style.setProperty('--layer-color', resolveColor(layer.color));
     const left = document.createElement('div');
     const h3 = document.createElement('h3');
-    const link = document.createElement('a'); link.href = 'briefing.html?id=' + b.id; link.textContent = b.title; link.style.color='inherit';
+    const link = document.createElement('a'); link.href = 'briefings/' + b.id + '.html'; link.textContent = b.title; link.style.color='inherit';
     h3.appendChild(link);
     const p = document.createElement('p'); p.innerHTML = inlineMarkdown(escapeHtml(b.excerpt));
     const meta = document.createElement('div'); meta.className = 'meta';
@@ -532,7 +533,7 @@ function wireSearch(){
       briefingHits.forEach(b=>{
         const layer = layerByNum(b.layer);
         const a = document.createElement('a'); a.className='search-result';
-        a.href = 'briefing.html?id='+b.id;
+        a.href = 'briefings/'+b.id+'.html';
         a.innerHTML = `<span class="search-tag">Briefing</span><span class="search-title">${b.title}</span><span class="search-sub">Layer ${layer.num} · ${formatDate(b.date)}</span>`;
         resultsEl.appendChild(a);
       });

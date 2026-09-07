@@ -12,7 +12,7 @@
 <meta property="og:title" content="Briefings — Beyond Beta">
 <meta property="og:description" content="500-word weekly briefings on technology sovereignty, each mapped to a layer of the Sovereignty Stack.">
 <meta property="og:url" content="https://beyondbeta.eu/briefings.html">
-<meta property="og:image" content="https://beyondbeta.eu/images/og-image.png">
+<meta property="og:image" content="https://beyondbeta.eu/og-image.png">
 <meta property="og:image:width" content="1731">
 <meta property="og:image:height" content="909">
 <meta property="og:image:alt" content="Beyond Beta — AI &amp; Technology Sovereignty">
@@ -20,7 +20,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Briefings — Beyond Beta">
 <meta name="twitter:description" content="500-word weekly briefings on technology sovereignty, each mapped to a layer of the Sovereignty Stack.">
-<meta name="twitter:image" content="https://beyondbeta.eu/images/og-image.png">
+<meta name="twitter:image" content="https://beyondbeta.eu/og-image.png">
 <link rel="stylesheet" href="shared.css">
 </head>
 <body>
@@ -65,7 +65,31 @@
     <p class="lede">500-word briefings, published every week, each mapped to a layer of the Sovereignty Stack. Showing the 12 most recent. <a href="briefings-archive.html" style="color:var(--cobalt); font-weight:700;">Browse the full searchable archive →</a></p>
   </div>
   <section>
-    <div class="wrap" id="briefings-list"></div>
+    <div class="wrap">
+      <div class="briefing-banner" id="latest-briefing-banner" style="margin-bottom:36px; display:none;">
+        <div class="briefing-visual">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <g id="recent-city-lights"></g>
+          </svg>
+        </div>
+        <div class="briefing-copy">
+          <p class="eyebrow">Latest briefing</p>
+          <p class="layer-tag" id="recent-featured-layer-tag"></p>
+          <h3><a id="recent-featured-title-link" href="#"></a></h3>
+          <p id="recent-featured-excerpt"></p>
+          <div class="briefing-meta">
+            <span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+              <span id="recent-featured-readtime"></span>
+            </span>
+            <span id="recent-featured-date"></span>
+          </div>
+          <a href="#" class="read-link" id="recent-featured-link">Read briefing →</a>
+        </div>
+      </div>
+      <div id="briefings-list"></div>
+      <p class="archive-empty" id="briefings-more-empty" style="display:none; color:var(--muted); font-size:14.5px; padding:20px 0;">More briefings publish weekly — check back soon.</p>
+    </div>
   </section>
 </main>
 <footer>
@@ -123,7 +147,31 @@ wireSubscribeModal();
 
 loadSharedData().then(()=>{
   const sorted = [...BRIEFINGS].sort((a,b)=> new Date(b.date) - new Date(a.date));
-  renderBriefingRows('briefings-list', sorted.slice(0,12));
+  const latest = sorted[0];
+
+  if(latest){
+    const layer = layerByNum(latest.layer);
+    const color = resolveColor(layer.color);
+    const url = 'briefings/' + latest.id + '.html';
+    document.getElementById('latest-briefing-banner').style.display = '';
+    const layerTag = document.getElementById('recent-featured-layer-tag');
+    layerTag.textContent = `Layer ${layer.num} · ${layer.name}`;
+    layerTag.style.color = color;
+    document.getElementById('recent-featured-title-link').textContent = latest.title;
+    document.getElementById('recent-featured-title-link').href = url;
+    document.getElementById('recent-featured-excerpt').innerHTML = inlineMarkdown(escapeHtml(latest.excerpt));
+    document.getElementById('recent-featured-readtime').textContent = latest.readTime;
+    document.getElementById('recent-featured-date').textContent = formatDate(latest.date);
+    document.getElementById('recent-featured-link').href = url;
+    renderCityLights('recent-city-lights');
+  }
+
+  const rest = sorted.slice(1, 12);
+  renderBriefingRows('briefings-list', rest);
+  if(rest.length === 0){
+    document.getElementById('briefings-more-empty').style.display = '';
+  }
+
   wireSearch();
 });
 </script>

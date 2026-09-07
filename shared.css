@@ -378,7 +378,9 @@ footer ul a:hover{color:#fff;}
 .archive-group-head .dot{width:14px; height:14px; border-radius:50%; flex-shrink:0;}
 .archive-group-head h2{font-family:var(--serif); font-weight:500; font-size:20px; margin:0; color:var(--navy);}
 .briefing-row{
-  display:grid; grid-template-columns:1fr auto; gap:16px; align-items:start; padding:20px 0; border-top:1px solid var(--border);
+  display:grid; grid-template-columns:1fr auto; gap:16px; align-items:start;
+  padding:20px 0 20px 18px; border-top:1px solid var(--border);
+  border-left:4px solid var(--layer-color, var(--border)); border-radius:0 6px 6px 0;
 }
 .briefing-row:first-of-type{border-top:none;}
 .briefing-row h3{font-family:var(--serif); font-weight:500; font-size:19px; margin:0 0 8px; color:var(--navy);}
