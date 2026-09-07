@@ -1,1 +1,191 @@
-[]
+[
+  {
+    "layer": 2,
+    "date": "2026-09-03",
+    "title": "Fantasy M&A: the recipe for a European champion",
+    "url": "https://www.ft.com/content/d4e5956a-200c-47d1-9241-f15f495c2cf2?emailId=a7dc0af3-eacf-495c-ab8f-316a7b72c9f6&segmentId=7d033110-c776-45bf-e9f2-7c3a03d2dd26&syn-25a6b1a6=1",
+    "source": "Financial Times",
+    "num": "#021",
+    "id": "signal-fantasy-m-a-the-recipe-for-a-european-champio"
+  },
+  {
+    "layer": 3,
+    "date": "2026-09-02",
+    "title": "National data centre projects are consolidating America’s AI lead",
+    "url": "https://www.ft.com/content/732c05fe-ca63-4048-8784-aebe80b8b1f4",
+    "source": "Financial Times",
+    "num": "#020",
+    "id": "signal-national-data-centre-projects-are-consolidati"
+  },
+  {
+    "layer": 2,
+    "date": "2026-08-13",
+    "title": "Deutsche Telekom: Konzern rudert bei Glasfaserausbau zurück",
+    "url": "https://www.handelsblatt.com/unternehmen/dienstleister/deutsche-telekom-konzern-rudert-bei-glasfaserausbau-zurueck/100247079.html",
+    "source": "Handelsblatt",
+    "num": "#019",
+    "id": "signal-deutsche-telekom-konzern-rudert-bei-glasfaser"
+  },
+  {
+    "layer": 6,
+    "date": "2026-08-06",
+    "title": "Europe must create an AI money-mobilisation machine",
+    "url": "https://www.ft.com/content/8a3c87ca-53e0-4ce0-9c9d-c1f9c461f6b0?syn-25a6b1a6=1",
+    "source": "Financial Times",
+    "num": "#018",
+    "id": "signal-europe-must-create-an-ai-money-mobilisation-m"
+  },
+  {
+    "layer": 0,
+    "date": "2026-07-10",
+    "title": "Seltene Erden: „Die Chinesen werden uns nicht helfen, die Nato aufzurüsten“",
+    "url": "https://www.handelsblatt.com/unternehmen/mittelstand/familienunternehmer/seltene-erden-die-chinesen-werden-uns-nicht-helfen-die-nato-aufzuruesten/100233380.html",
+    "source": "Handelsblatt",
+    "num": "#017",
+    "id": "signal-seltene-erden-die-chinesen-werden-uns-nicht-h"
+  },
+  {
+    "layer": 0,
+    "date": "2026-07-09",
+    "title": "Competing for inputs: how the European Union can improve critical raw materials supply security",
+    "url": "https://www.bruegel.org/policy-brief/competing-inputs-how-european-union-can-improve-critical-raw-materials-supply-security",
+    "source": "Academia (Bruegel Policy Brief)",
+    "num": "#016",
+    "id": "signal-competing-for-inputs-how-the-european-union-c"
+  },
+  {
+    "layer": 4,
+    "date": "2026-06-25",
+    "title": "Cloud-Sektor: Brüssel will AWS und Microsoft Azure strenger überwachen",
+    "url": "https://www.handelsblatt.com/politik/international/cloud-sektor-bruessel-will-aws-und-microsoft-azure-strenger-ueberwachen/100235703.html",
+    "source": "Handelsblatt",
+    "num": "#015",
+    "id": "signal-cloud-sektor-br-ssel-will-aws-und-microsoft-a"
+  },
+  {
+    "layer": 0,
+    "date": "2026-06-17",
+    "title": "Rohstoffe: G7 wollen Obergrenze für Rohstoffimporte aus China erreichen",
+    "url": "https://www.handelsblatt.com/politik/international/rohstoffe-g7-wollen-obergrenze-fuer-rohstoffimporte-aus-china-erreichen/100233834.html",
+    "source": "Handelsblatt",
+    "num": "#014",
+    "id": "signal-rohstoffe-g7-wollen-obergrenze-f-r-rohstoffim"
+  },
+  {
+    "layer": 7,
+    "date": "2026-06-11",
+    "title": "Europe 2031: What getting AI wrong means for us",
+    "url": "https://europe2031.ai",
+    "source": "Europe 2031",
+    "num": "#013",
+    "id": "signal-europe-2031-what-getting-ai-wrong-means-for-u"
+  },
+  {
+    "layer": 7,
+    "date": "2026-06-03",
+    "title": "The Technological Sovereignty Package will strengthen Europe’s competitiveness,\nstrategic autonomy and geoeconomic position.",
+    "url": "https://ec.europa.eu/commission/presscorner/api/files/attachment/882568/Factsheet%20Tech%20Sovereignty.pdf",
+    "source": "European Commission",
+    "num": "#012",
+    "id": "signal-the-technological-sovereignty-package-will-st"
+  },
+  {
+    "layer": 4,
+    "date": "2026-05-28",
+    "title": "Digitale Souveränität: EU will souveräne Clouds bevorzugen",
+    "url": "https://www.handelsblatt.com/politik/international/digitale-souveraenitaet-eu-will-souveraene-clouds-bevorzugen/100222639.html",
+    "source": "Handelsblatt",
+    "num": "#011",
+    "id": "signal-digitale-souver-nit-t-eu-will-souver-ne-cloud"
+  },
+  {
+    "layer": 1,
+    "date": "2026-05-28",
+    "title": "Halbleiter: EU-Kommission will Chip-Käufe bei europäischen Start-ups fördern",
+    "url": "https://www.handelsblatt.com/politik/international/halbleiter-eu-kommission-will-chip-kaeufe-bei-europaeischen-start-ups-foerdern/100228792.html",
+    "source": "Handelsblatt",
+    "num": "#010",
+    "id": "signal-halbleiter-eu-kommission-will-chip-k-ufe-bei-"
+  },
+  {
+    "layer": 3,
+    "date": "2026-05-19",
+    "title": "Europe needs a strategy to close the artificial intelligence compute gap",
+    "url": "https://www.bruegel.org/analysis/europe-needs-strategy-close-artificial-intelligence-compute-gap",
+    "source": "Academia (Bruegel Policy Brief)",
+    "num": "#009",
+    "id": "signal-europe-needs-a-strategy-to-close-the-artifici"
+  },
+  {
+    "layer": 1,
+    "date": "2026-05-13",
+    "title": "Revamping Europe's chips strategy: indispensability, not self-sufficiency",
+    "url": "https://www.bruegel.org/analysis/revamping-europes-chips-strategy-indispensability-not-self-sufficiency",
+    "source": "Academia (Bruegel Policy Brief)",
+    "num": "#008",
+    "id": "signal-revamping-europe-s-chips-strategy-indispensab"
+  },
+  {
+    "layer": 3,
+    "date": "2026-05-06",
+    "title": "Cloud: Souverän mit US-Hilfe – neues Angebot von Amazon und Vodafone",
+    "url": "https://www.handelsblatt.com/technik/it-internet/cloud-souveraen-mit-us-hilfe-neues-angebot-von-amazon-und-vodafone/100222509.html",
+    "source": "Handelsblatt",
+    "num": "#007",
+    "id": "signal-cloud-souver-n-mit-us-hilfe-neues-angebot-von"
+  },
+  {
+    "layer": 5,
+    "date": "2026-04-30",
+    "title": "The Common European Energy Data Space and the Energy Networks",
+    "url": "https://link.springer.com/article/10.1007/s40518-026-00288-x",
+    "source": "Academia (Current Sustainable/Renewable Energy Reports)",
+    "num": "#006",
+    "id": "signal-the-common-european-energy-data-space-and-the"
+  },
+  {
+    "layer": 3,
+    "date": "2026-03-17",
+    "title": "Rechenzentren: KI-Kapazitäten vervierfachen – Regierung plant Aufholjagd",
+    "url": "https://www.handelsblatt.com/politik/deutschland/rechenzentren-ki-kapazitaeten-vervierfachen-regierung-plant-aufholjagd/100209102.html",
+    "source": "Handelsblatt",
+    "num": "#005",
+    "id": "signal-rechenzentren-ki-kapazit-ten-vervierfachen-re"
+  },
+  {
+    "layer": 7,
+    "date": "2026-03-01",
+    "title": "The case for a European Union digital enforcement authority",
+    "url": "https://www.bruegel.org/sites/default/files/2026-03/PB%2005%202026.pdf",
+    "source": "Academia (Bruegel Policy Brief) 05/2026",
+    "num": "#004",
+    "id": "signal-the-case-for-a-european-union-digital-enforce"
+  },
+  {
+    "layer": 2,
+    "date": "2025-12-10",
+    "title": "Unterseekabel-Monopol: Europas Sicherheit wird am Meeresboden entschieden",
+    "url": "https://www.handelsblatt.com/politik/deutschland/unterseekabel-monopol-europas-sicherheit-wird-am-meeresboden-entschieden/100181439.html",
+    "source": "Handelsblatt",
+    "num": "#003",
+    "id": "signal-unterseekabel-monopol-europas-sicherheit-wird"
+  },
+  {
+    "layer": 5,
+    "date": "2025-12-08",
+    "title": "The European Union needs more than the digital omnibus to make digital services competitive",
+    "url": "https://www.bruegel.org/analysis/european-union-needs-more-digital-omnibus-make-digital-services-competitive",
+    "source": "Academia — Bruegel",
+    "num": "#002",
+    "id": "signal-the-european-union-needs-more-than-the-digita"
+  },
+  {
+    "layer": 7,
+    "date": "2025-05-01",
+    "title": "What the Eurostack Initiative proposes",
+    "url": "https://eurostack.eu/wp-content/uploads/2025/08/eurostack-white-paper-final-19-05-25-3.pdf",
+    "source": "Website",
+    "num": "#001",
+    "id": "signal-what-the-eurostack-initiative-proposes"
+  }
+]
