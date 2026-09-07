@@ -36,62 +36,15 @@ const TEAM = [
    LIVE DATA LOADING
    BRIEFINGS: loaded from briefings.json (edit that file + push to
    GitHub to add a weekly briefing).
-   SIGNALS: loaded from a published Google Sheet CSV, refreshed on
-   every page load -- no GitHub commit needed. Ask Claude for the
-   setup steps if this needs to be changed.
+   SIGNALS: loaded from signals.json, which a scheduled GitHub Action
+   (.github/workflows/update-signals.yml) regenerates every 15 minutes
+   from the published Google Sheet -- no manual step needed on your
+   end beyond adding rows to the sheet. Ask Claude if this needs to
+   change.
    ============================================================ */
 
 let BRIEFINGS = [];
 let SIGNALS = [];
-
-// TODO: replace with your published Google Sheet CSV URL
-// (Google Sheet > File > Share > Publish to web > select the Signals
-// tab > CSV > copy the link it gives you)
-const SIGNALS_SHEET_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTlZKv4JBXqErNaEhVjksW9Ta61qSSbibm4uwTR0a5C1TP6eZxurnIHYagvWYwpbA/pub?output=csv';
-
-function parseCSV(text){
-  const rows = [];
-  let row = [], field = '', inQuotes = false;
-  for(let i = 0; i < text.length; i++){
-    const c = text[i], next = text[i+1];
-    if(inQuotes){
-      if(c === '"' && next === '"'){ field += '"'; i++; }
-      else if(c === '"'){ inQuotes = false; }
-      else { field += c; }
-    } else {
-      if(c === '"'){ inQuotes = true; }
-      else if(c === ','){ row.push(field); field = ''; }
-      else if(c === '\r'){ /* ignore */ }
-      else if(c === '\n'){ row.push(field); rows.push(row); row = []; field = ''; }
-      else { field += c; }
-    }
-  }
-  if(field.length || row.length){ row.push(field); rows.push(row); }
-  if(!rows.length) return [];
-  const headers = rows.shift().map(h => h.trim());
-  return rows
-    .filter(r => r.some(c => c.trim() !== ''))
-    .map(r => {
-      const obj = {};
-      headers.forEach((h, idx) => obj[h] = (r[idx] || '').trim());
-      return obj;
-    });
-}
-
-function parseFlexibleDate(s){
-  s = (s || '').trim();
-  let m = s.match(/^(\d{4})-(\d{1,2})-(\d{1,2})/);
-  if(m) return `${m[1]}-${m[2].padStart(2,'0')}-${m[3].padStart(2,'0')}`;
-  m = s.match(/^(\d{1,2})\.(\d{1,2})\.(\d{4})/);
-  if(m) return `${m[3]}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`;
-  m = s.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})/);
-  if(m) return `${m[3]}-${m[1].padStart(2,'0')}-${m[2].padStart(2,'0')}`;
-  return s;
-}
-
-function slugify(s){
-  return 'signal-' + s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,'').slice(0,45);
-}
 
 async function loadBriefings(){
   try {
@@ -105,32 +58,10 @@ async function loadBriefings(){
 
 async function loadSignals(){
   try {
-    if(!SIGNALS_SHEET_CSV_URL || SIGNALS_SHEET_CSV_URL.includes('PASTE_YOUR')){
-      console.warn('SIGNALS_SHEET_CSV_URL is not set yet -- see the comment above it in shared.js.');
-      return SIGNALS;
-    }
-    const res = await fetch(SIGNALS_SHEET_CSV_URL, {cache:'no-store'});
-    const text = await res.text();
-    const rows = parseCSV(text);
-    const mapped = rows
-      .filter(r => (r['Approved'] || '').trim().toLowerCase() === 'yes' && r['Headline / Titel'] && r['Link'])
-      .map(r => ({
-        layer: parseInt(r['Layer-Nr'], 10),
-        date: parseFlexibleDate(r['Signal-Datum']),
-        title: r['Headline / Titel'].trim(),
-        url: r['Link'].trim(),
-        source: (r['Quelle'] || '').trim()
-      }))
-      .filter(s => !isNaN(s.layer) && s.date && s.title && s.url);
-    mapped.sort((a,b) => new Date(a.date) - new Date(b.date));
-    mapped.forEach((s, i) => {
-      s.num = '#' + String(i+1).padStart(3,'0');
-      s.id = slugify(s.title);
-    });
-    mapped.reverse();
-    SIGNALS = mapped;
+    const res = await fetch('signals.json', {cache:'no-store'});
+    SIGNALS = await res.json();
   } catch(e){
-    console.error('Could not load signals from the Google Sheet:', e);
+    console.error('Could not load signals.json:', e);
   }
   return SIGNALS;
 }
