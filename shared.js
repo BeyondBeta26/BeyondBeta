@@ -5,14 +5,14 @@
    ============================================================ */
 
 const LAYERS = [
-  {num:0, name:'Raw materials and intermediate products', desc:'Rare earths, silicon, raw materials', color:'var(--l0)', count:'5 essays'},
-  {num:1, name:'Components', desc:'Microchips, sensors, actuators, production and enabling technologies, 3D printing, QC, AI', color:'var(--l1)', count:'6 essays'},
-  {num:2, name:'Communications infrastructure', desc:'Broadband infrastructure, mobile networks (Open RAN), Galileo navigation, 5G/6G', color:'var(--l2)', count:'7 essays'},
-  {num:3, name:'Infrastructure-as-a-Service (IaaS)', desc:'Virtual, distributed cloud ecosystems, edge technology, QC, AI-HPC centers', color:'var(--l3)', count:'10 essays'},
-  {num:4, name:'Platform-as-a-Service (PaaS)', desc:'Application and development ecosystems B2B and B2C (abstraction layer, container technology), QC, AI, IoT', color:'var(--l4)', count:'8 essays'},
-  {num:5, name:'(European) Data spaces', desc:'E.g. for mobility, health, public sector, secure, interoperable, trusted data infrastructure', color:'var(--l5)', count:'9 essays'},
-  {num:6, name:'Software technology', desc:'App development, Office, ERP, AI, middleware, robotics software, blockchain, algorithms, open source, VR/AR, QC', color:'var(--l6)', count:'7 essays'},
-  {num:7, name:'(European) system of laws and values', desc:'Cybersecurity, cryptography, e-identity, certification, regulations, standards, ethics', color:'var(--l7)', count:'6 essays'}
+  {num:0, name:'Raw materials and intermediate products', desc:'Rare earths, silicon, raw materials', mapDesc:'e.g. rare earths, silicon', color:'var(--l0)', count:'5 essays'},
+  {num:1, name:'Components', desc:'Microchips, sensors, actuators, production and enabling technologies, 3D printing, QC, AI', mapDesc:'e.g. microchips, sensors', color:'var(--l1)', count:'6 essays'},
+  {num:2, name:'Communications infrastructure', desc:'Broadband infrastructure, mobile networks (Open RAN), Galileo navigation, 5G/6G', mapDesc:'e.g. 5G/6G, broadband', color:'var(--l2)', count:'7 essays'},
+  {num:3, name:'Infrastructure-as-a-Service (IaaS)', desc:'Virtual, distributed cloud ecosystems, edge technology, QC, AI-HPC centers', mapDesc:'e.g. cloud, edge computing', color:'var(--l3)', count:'10 essays'},
+  {num:4, name:'Platform-as-a-Service (PaaS)', desc:'Application and development ecosystems B2B and B2C (abstraction layer, container technology), QC, AI, IoT', mapDesc:'e.g. APIs, dev platforms', color:'var(--l4)', count:'8 essays'},
+  {num:5, name:'(European) Data spaces', desc:'E.g. for mobility, health, public sector, secure, interoperable, trusted data infrastructure', mapDesc:'e.g. mobility, health data', color:'var(--l5)', count:'9 essays'},
+  {num:6, name:'Software technology', desc:'App development, Office, ERP, AI, middleware, robotics software, blockchain, algorithms, open source, VR/AR, QC', mapDesc:'e.g. AI, apps, algorithms', color:'var(--l6)', count:'7 essays'},
+  {num:7, name:'(European) system of laws and values', desc:'Cybersecurity, cryptography, e-identity, certification, regulations, standards, ethics', mapDesc:'e.g. regulation, ethics', color:'var(--l7)', count:'6 essays'}
 ];
 
 
@@ -222,16 +222,30 @@ function buildMap(svg, opts){
     g.appendChild(station);
 
     if(showLabels){
+      const vbWidth = (svg.viewBox && svg.viewBox.baseVal && svg.viewBox.baseVal.width) || 900;
+      const rightEdge = vbWidth - 20;
+      const maxLabelWidth = Math.max(60, rightEdge - (stationX+54));
+
       const num = el('text', {x:stationX+26, y:sy+7, class:'map-num', fill:color});
       num.textContent = layer.num; g.appendChild(num);
 
       const label = el('text', {x:stationX+54, y:sy-1, class:'map-label'});
-      label.textContent = layer.name; g.appendChild(label);
+      label.textContent = layer.name;
+      if(layer.name.length * 9.6 > maxLabelWidth){
+        label.setAttribute('textLength', maxLabelWidth);
+        label.setAttribute('lengthAdjust', 'spacingAndGlyphs');
+      }
+      g.appendChild(label);
 
       const desc = el('text', {x:stationX+54, y:sy+16, class:'map-desc'});
-      desc.textContent = layer.desc; g.appendChild(desc);
+      desc.textContent = layer.mapDesc;
+      if(layer.mapDesc.length * 7.0 > maxLabelWidth){
+        desc.setAttribute('textLength', maxLabelWidth);
+        desc.setAttribute('lengthAdjust', 'spacingAndGlyphs');
+      }
+      g.appendChild(desc);
 
-      const bbox_w = layer.name.length*9.0 + 34;
+      const bbox_w = Math.min(layer.name.length*9.0 + 34, rightEdge - (stationX+46));
       const pill = el('rect', {x:stationX+46, y:sy-19, width:bbox_w, height:26, rx:8, class:'hi-pill'});
       pill.setAttribute('fill', '#ffffff');
       pill.setAttribute('stroke', color);
