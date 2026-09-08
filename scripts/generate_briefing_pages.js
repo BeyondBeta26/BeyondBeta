@@ -239,3 +239,28 @@ briefings.forEach(b => {
   fs.writeFileSync(path.join(OUT_DIR, `${b.id}.html`), html);
   console.log(`Wrote briefings/${b.id}.html`);
 });
+
+// --- regenerate sitemap.xml so it always reflects every current briefing ---
+const today = new Date().toISOString().slice(0, 10);
+const staticPages = [
+  { loc: '/', changefreq: 'weekly', priority: '1.0' },
+  { loc: '/framework.html', changefreq: 'monthly', priority: '0.8' },
+  { loc: '/briefings.html', changefreq: 'weekly', priority: '0.9' },
+  { loc: '/briefings-archive.html', changefreq: 'monthly', priority: '0.5' },
+  { loc: '/signals.html', changefreq: 'daily', priority: '0.9' },
+  { loc: '/signals-archive.html', changefreq: 'weekly', priority: '0.5' },
+  { loc: '/authors.html', changefreq: 'monthly', priority: '0.6' },
+  { loc: '/about.html', changefreq: 'monthly', priority: '0.6' },
+  { loc: '/impressum.html', changefreq: 'yearly', priority: '0.3' },
+  { loc: '/privacy-policy.html', changefreq: 'yearly', priority: '0.3' },
+  { loc: '/site-notice.html', changefreq: 'yearly', priority: '0.3' },
+];
+
+const urlEntries = [
+  ...staticPages.map(p => `  <url>\n    <loc>${SITE_URL}${p.loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${p.changefreq}</changefreq>\n    <priority>${p.priority}</priority>\n  </url>`),
+  ...briefings.map(b => `  <url>\n    <loc>${SITE_URL}/briefings/${b.id}.html</loc>\n    <lastmod>${b.date}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`),
+];
+
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlEntries.join('\n')}\n</urlset>\n`;
+fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap);
+console.log('Wrote sitemap.xml');
