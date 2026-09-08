@@ -1,11 +1,47 @@
 [
   {
+    "layer": 6,
+    "date": "2026-09-08",
+    "title": "Mistral raises record €3bn as Europe strains to keep pace in AI race",
+    "url": "https://giftarticle.ft.com/giftarticle/actions/redeem/7405adc5-99c1-4221-a6db-5385bb2cea98",
+    "source": "Financial Times",
+    "num": "#028",
+    "id": "signal-mistral-raises-record-3bn-as-europe-strains-t"
+  },
+  {
+    "layer": 7,
+    "date": "2026-09-07",
+    "title": "AI moves fast. Here's how the law can keep up",
+    "url": "https://www.ted.com/talks/kirsten_rulf_ai_moves_fast_here_s_how_the_law_can_keep_up",
+    "source": "TED",
+    "num": "#027",
+    "id": "signal-ai-moves-fast-here-s-how-the-law-can-keep-up"
+  },
+  {
+    "layer": 6,
+    "date": "2026-09-07",
+    "title": "AI Act: OpenAI sends EU Commission incident report on hijacked German website",
+    "url": "https://www.reuters.com/business/openai-has-sent-eu-incident-report-hijacked-german-website-commission-says-2026-09-07/",
+    "source": "Reuters",
+    "num": "#026",
+    "id": "signal-ai-act-openai-sends-eu-commission-incident-re"
+  },
+  {
+    "layer": 7,
+    "date": "2026-09-07",
+    "title": "The EU Law Tracker",
+    "url": "https://law-tracker.europa.eu/homepage?lang=en",
+    "source": "European Commission",
+    "num": "#025",
+    "id": "signal-the-eu-law-tracker"
+  },
+  {
     "layer": 2,
     "date": "2026-09-03",
     "title": "Fantasy M&A: the recipe for a European champion",
     "url": "https://www.ft.com/content/d4e5956a-200c-47d1-9241-f15f495c2cf2?emailId=a7dc0af3-eacf-495c-ab8f-316a7b72c9f6&segmentId=7d033110-c776-45bf-e9f2-7c3a03d2dd26&syn-25a6b1a6=1",
     "source": "Financial Times",
-    "num": "#022",
+    "num": "#024",
     "id": "signal-fantasy-m-a-the-recipe-for-a-european-champio"
   },
   {
@@ -14,8 +50,26 @@
     "title": "National data centre projects are consolidating America’s AI lead",
     "url": "https://www.ft.com/content/732c05fe-ca63-4048-8784-aebe80b8b1f4",
     "source": "Financial Times",
-    "num": "#021",
+    "num": "#023",
     "id": "signal-national-data-centre-projects-are-consolidati"
+  },
+  {
+    "layer": 2,
+    "date": "2026-08-27",
+    "title": "Data Centers in Space - Fantasy or viable option?",
+    "url": "https://www.bcg.com/publications/2026/space-based-data-centers-cost-outlook",
+    "source": "Website",
+    "num": "#022",
+    "id": "signal-data-centers-in-space-fantasy-or-viable-optio"
+  },
+  {
+    "layer": 4,
+    "date": "2026-08-24",
+    "title": "Thomson Reuters Leverages its World-Class Data Assets to Launch Its Own Frontier Model.",
+    "url": "https://www.thomsonreuters.com/en/press-releases/2026/august/thomson-reuters-leverages-its-world-class-data-assets-to-launch-its-own-frontier-model",
+    "source": "Thomson Reuters",
+    "num": "#021",
+    "id": "signal-thomson-reuters-leverages-its-world-class-dat"
   },
   {
     "layer": 2,
