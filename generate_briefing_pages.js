@@ -168,7 +168,7 @@ function buildPage(b){
 <meta property="og:title" content="${titleAttr}">
 <meta property="og:description" content="${metaDesc}">
 <meta property="og:url" content="${canonicalUrl}">
-<meta property="og:image" content="https://beyondbeta.eu/images/og-image.png">
+<meta property="og:image" content="https://beyondbeta.eu/og-image.png">
 <meta property="og:image:width" content="1731">
 <meta property="og:image:height" content="909">
 <meta property="og:image:alt" content="Beyond Beta — AI &amp; Technology Sovereignty">
@@ -176,7 +176,7 @@ function buildPage(b){
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${titleAttr}">
 <meta name="twitter:description" content="${metaDesc}">
-<meta name="twitter:image" content="https://beyondbeta.eu/images/og-image.png">
+<meta name="twitter:image" content="https://beyondbeta.eu/og-image.png">
 
 <link rel="stylesheet" href="../shared.css">
 <style>
