@@ -159,6 +159,10 @@ function buildPage(b){
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <title>${escapeHtml(b.title)} — Beyond Beta</title>
 <meta name="description" content="${metaDesc}">
 <link rel="canonical" href="${canonicalUrl}">
@@ -168,7 +172,7 @@ function buildPage(b){
 <meta property="og:title" content="${titleAttr}">
 <meta property="og:description" content="${metaDesc}">
 <meta property="og:url" content="${canonicalUrl}">
-<meta property="og:image" content="https://beyondbeta.eu/images/og-image.png">
+<meta property="og:image" content="https://beyondbeta.eu/og-image.png">
 <meta property="og:image:width" content="1731">
 <meta property="og:image:height" content="909">
 <meta property="og:image:alt" content="Beyond Beta — AI &amp; Technology Sovereignty">
@@ -176,7 +180,7 @@ function buildPage(b){
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${titleAttr}">
 <meta name="twitter:description" content="${metaDesc}">
-<meta name="twitter:image" content="https://beyondbeta.eu/images/og-image.png">
+<meta name="twitter:image" content="https://beyondbeta.eu/og-image.png">
 
 <link rel="stylesheet" href="../shared.css">
 <style>
