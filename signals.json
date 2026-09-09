@@ -2,10 +2,19 @@
   {
     "layer": 6,
     "date": "2026-09-08",
+    "title": "On the Navier–Stokes Millennium Prize Problem",
+    "url": "https://openai.com/index/navier-stokes-solution/",
+    "source": "OpenAI",
+    "num": "#033",
+    "id": "signal-on-the-navier-stokes-millennium-prize-problem"
+  },
+  {
+    "layer": 6,
+    "date": "2026-09-08",
     "title": "Mistral raises record €3bn as Europe strains to keep pace in AI race",
     "url": "https://giftarticle.ft.com/giftarticle/actions/redeem/7405adc5-99c1-4221-a6db-5385bb2cea98",
     "source": "Financial Times",
-    "num": "#028",
+    "num": "#032",
     "id": "signal-mistral-raises-record-3bn-as-europe-strains-t"
   },
   {
@@ -14,7 +23,7 @@
     "title": "AI moves fast. Here's how the law can keep up",
     "url": "https://www.ted.com/talks/kirsten_rulf_ai_moves_fast_here_s_how_the_law_can_keep_up",
     "source": "TED",
-    "num": "#027",
+    "num": "#031",
     "id": "signal-ai-moves-fast-here-s-how-the-law-can-keep-up"
   },
   {
@@ -23,7 +32,7 @@
     "title": "AI Act: OpenAI sends EU Commission incident report on hijacked German website",
     "url": "https://www.reuters.com/business/openai-has-sent-eu-incident-report-hijacked-german-website-commission-says-2026-09-07/",
     "source": "Reuters",
-    "num": "#026",
+    "num": "#030",
     "id": "signal-ai-act-openai-sends-eu-commission-incident-re"
   },
   {
@@ -32,7 +41,7 @@
     "title": "The EU Law Tracker",
     "url": "https://law-tracker.europa.eu/homepage?lang=en",
     "source": "European Commission",
-    "num": "#025",
+    "num": "#029",
     "id": "signal-the-eu-law-tracker"
   },
   {
@@ -41,7 +50,7 @@
     "title": "Fantasy M&A: the recipe for a European champion",
     "url": "https://www.ft.com/content/d4e5956a-200c-47d1-9241-f15f495c2cf2?emailId=a7dc0af3-eacf-495c-ab8f-316a7b72c9f6&segmentId=7d033110-c776-45bf-e9f2-7c3a03d2dd26&syn-25a6b1a6=1",
     "source": "Financial Times",
-    "num": "#024",
+    "num": "#028",
     "id": "signal-fantasy-m-a-the-recipe-for-a-european-champio"
   },
   {
@@ -50,7 +59,7 @@
     "title": "National data centre projects are consolidating America’s AI lead",
     "url": "https://www.ft.com/content/732c05fe-ca63-4048-8784-aebe80b8b1f4",
     "source": "Financial Times",
-    "num": "#023",
+    "num": "#027",
     "id": "signal-national-data-centre-projects-are-consolidati"
   },
   {
@@ -59,8 +68,17 @@
     "title": "Data Centers in Space - Fantasy or viable option?",
     "url": "https://www.bcg.com/publications/2026/space-based-data-centers-cost-outlook",
     "source": "Website",
-    "num": "#022",
+    "num": "#026",
     "id": "signal-data-centers-in-space-fantasy-or-viable-optio"
+  },
+  {
+    "layer": 7,
+    "date": "2026-08-26",
+    "title": "The turbulent AI era is here. The choices we make now are critical",
+    "url": "https://www.gatesnotes.com/a-turbulent-ai-era-and-critical-choices-to-make",
+    "source": "Gates Notes",
+    "num": "#025",
+    "id": "signal-the-turbulent-ai-era-is-here-the-choices-we-m"
   },
   {
     "layer": 4,
@@ -68,8 +86,17 @@
     "title": "Thomson Reuters Leverages its World-Class Data Assets to Launch Its Own Frontier Model.",
     "url": "https://www.thomsonreuters.com/en/press-releases/2026/august/thomson-reuters-leverages-its-world-class-data-assets-to-launch-its-own-frontier-model",
     "source": "Thomson Reuters",
-    "num": "#021",
+    "num": "#024",
     "id": "signal-thomson-reuters-leverages-its-world-class-dat"
+  },
+  {
+    "layer": 7,
+    "date": "2026-08-20",
+    "title": "An interview with Yuval Noah Harari",
+    "url": "https://www.economist.com/insider/the-insider/an-interview-with-yuval-noah-harari",
+    "source": "The Economist",
+    "num": "#023",
+    "id": "signal-an-interview-with-yuval-noah-harari"
   },
   {
     "layer": 2,
@@ -77,7 +104,7 @@
     "title": "Deutsche Telekom: Konzern rudert bei Glasfaserausbau zurück",
     "url": "https://www.handelsblatt.com/unternehmen/dienstleister/deutsche-telekom-konzern-rudert-bei-glasfaserausbau-zurueck/100247079.html",
     "source": "Handelsblatt",
-    "num": "#020",
+    "num": "#022",
     "id": "signal-deutsche-telekom-konzern-rudert-bei-glasfaser"
   },
   {
@@ -86,8 +113,17 @@
     "title": "Europe must create an AI money-mobilisation machine",
     "url": "https://www.ft.com/content/8a3c87ca-53e0-4ce0-9c9d-c1f9c461f6b0?syn-25a6b1a6=1",
     "source": "Financial Times",
-    "num": "#019",
+    "num": "#021",
     "id": "signal-europe-must-create-an-ai-money-mobilisation-m"
+  },
+  {
+    "layer": 3,
+    "date": "2026-07-16",
+    "title": "Airbus picks Iliad's Scaleway for AI, defence work in sovereignty push",
+    "url": "https://www.reuters.com/legal/litigation/airbus-picks-iliads-scaleway-ai-defence-work-sovereignty-push-2026-07-16/",
+    "source": "Reuters",
+    "num": "#020",
+    "id": "signal-airbus-picks-iliad-s-scaleway-for-ai-defence-"
   },
   {
     "layer": 0,
@@ -95,7 +131,7 @@
     "title": "Seltene Erden: „Die Chinesen werden uns nicht helfen, die Nato aufzurüsten“",
     "url": "https://www.handelsblatt.com/unternehmen/mittelstand/familienunternehmer/seltene-erden-die-chinesen-werden-uns-nicht-helfen-die-nato-aufzuruesten/100233380.html",
     "source": "Handelsblatt",
-    "num": "#018",
+    "num": "#019",
     "id": "signal-seltene-erden-die-chinesen-werden-uns-nicht-h"
   },
   {
@@ -104,7 +140,7 @@
     "title": "Competing for inputs: how the European Union can improve critical raw materials supply security",
     "url": "https://www.bruegel.org/policy-brief/competing-inputs-how-european-union-can-improve-critical-raw-materials-supply-security",
     "source": "Academia (Bruegel Policy Brief)",
-    "num": "#017",
+    "num": "#018",
     "id": "signal-competing-for-inputs-how-the-european-union-c"
   },
   {
@@ -113,8 +149,17 @@
     "title": "Cloud-Sektor: Brüssel will AWS und Microsoft Azure strenger überwachen",
     "url": "https://www.handelsblatt.com/politik/international/cloud-sektor-bruessel-will-aws-und-microsoft-azure-strenger-ueberwachen/100235703.html",
     "source": "Handelsblatt",
-    "num": "#016",
+    "num": "#017",
     "id": "signal-cloud-sektor-br-ssel-will-aws-und-microsoft-a"
+  },
+  {
+    "layer": 7,
+    "date": "2026-06-23",
+    "title": "Top carmakers warn EU tech sovereignty drive will raise costs",
+    "url": "https://www.ft.com/content/3b9c9683-f137-4459-adc9-3679b8899c07?syn-25a6b1a6=1",
+    "source": "Financial Times",
+    "num": "#016",
+    "id": "signal-top-carmakers-warn-eu-tech-sovereignty-drive-"
   },
   {
     "layer": 0,
