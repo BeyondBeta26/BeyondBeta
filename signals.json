@@ -2,11 +2,29 @@
   {
     "layer": 7,
     "date": "2026-09-11",
+    "title": "The Ezra Klein Show: The A.I. Revolt Is Here",
+    "url": "https://www.nytimes.com/2026/09/11/podcasts/hardfork-ezra-klein-jasmine-sun.html",
+    "source": "The New York Times",
+    "num": "#041",
+    "id": "signal-the-ezra-klein-show-the-a-i-revolt-is-here"
+  },
+  {
+    "layer": 7,
+    "date": "2026-09-11",
     "title": "Europe’s difficult choices on AI - An Opinion by Mario Draghi",
     "url": "https://www.ft.com/content/f054f927-b512-452a-b494-ea53f5ac1079?shareType=nongift",
     "source": "Financial Times",
-    "num": "#039",
+    "num": "#040",
     "id": "signal-europe-s-difficult-choices-on-ai-an-opinion-b"
+  },
+  {
+    "layer": 6,
+    "date": "2026-09-10",
+    "title": "Anthropic Threat Intelligence Report: Detecting and Countering  Misuse of AI",
+    "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
+    "source": "Anthropic",
+    "num": "#039",
+    "id": "signal-anthropic-threat-intelligence-report-detectin"
   },
   {
     "layer": 7,
