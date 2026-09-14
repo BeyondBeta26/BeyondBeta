@@ -1,11 +1,38 @@
 [
   {
+    "layer": 6,
+    "date": "2026-09-14",
+    "title": "KI: „Es gibt eine andere Möglichkeit, als zu Google zu gehen\"",
+    "url": "https://www.handelsblatt.com/technik/ki/ki-es-gibt-eine-andere-moeglichkeit-als-zu-google-zu-gehen/100252652.html?mls-token=4db8582e83f6425573a55a89352ffdfe77bd2bec2435422de58bb7c2d8eab3a73910068416b8612f5fc5d16704639e7e0100252652&utm_medium=in&utm_source=app&utm_campaign=verschenken",
+    "source": "Handelsblatt",
+    "num": "#047",
+    "id": "signal-ki-es-gibt-eine-andere-m-glichkeit-als-zu-goo"
+  },
+  {
+    "layer": 0,
+    "date": "2026-09-14",
+    "title": "Was sind Seltene Erden?",
+    "url": "https://www.enbw.com/unternehmen/themen/elektromobilitaet/seltene-erden.html",
+    "source": "EnBW Energie Baden-Württemberg AG",
+    "num": "#046",
+    "id": "signal-was-sind-seltene-erden"
+  },
+  {
+    "layer": 0,
+    "date": "2026-09-14",
+    "title": "Heraeus Remloy startet größte Recycling-Anlage für Seltene-Erden-Magnete in Europa",
+    "url": "https://www.heraeus.com/de/news-and-stories/2024-remloy-largest-recycling-plant/",
+    "source": "Heraeus (Remloy)",
+    "num": "#045",
+    "id": "signal-heraeus-remloy-startet-gr-te-recycling-anlage"
+  },
+  {
     "layer": 7,
     "date": "2026-09-14",
     "title": "A Transformative AI Strategy for Europe",
     "url": "https://transformative-ai.eu/",
     "source": "KIRA Center / Senior Expert Council (u. a. Monika Schnitzer, Daniel Privitera, Yoshua Bengio, Daron Acemoglu, Margrethe Vestager, Wolfgang Ischinger, Leo Varadkar)",
-    "num": "#043",
+    "num": "#044",
     "id": "signal-a-transformative-ai-strategy-for-europe"
   },
   {
@@ -14,7 +41,7 @@
     "title": "The Ezra Klein Show: The A.I. Revolt Is Here",
     "url": "https://www.nytimes.com/2026/09/11/podcasts/hardfork-ezra-klein-jasmine-sun.html",
     "source": "The New York Times",
-    "num": "#042",
+    "num": "#043",
     "id": "signal-the-ezra-klein-show-the-a-i-revolt-is-here"
   },
   {
@@ -23,7 +50,7 @@
     "title": "Europe’s difficult choices on AI - An Opinion by Mario Draghi",
     "url": "https://www.ft.com/content/f054f927-b512-452a-b494-ea53f5ac1079?shareType=nongift",
     "source": "Financial Times",
-    "num": "#041",
+    "num": "#042",
     "id": "signal-europe-s-difficult-choices-on-ai-an-opinion-b"
   },
   {
@@ -32,7 +59,7 @@
     "title": "Anthropic Threat Intelligence Report: Detecting and Countering  Misuse of AI",
     "url": "https://www.anthropic.com/threat-intelligence-report-september-2026",
     "source": "Anthropic",
-    "num": "#040",
+    "num": "#041",
     "id": "signal-anthropic-threat-intelligence-report-detectin"
   },
   {
@@ -41,7 +68,7 @@
     "title": "Exit Strategy: The EU's Tech Sovereignty Package Falls Short. Here’s How to Fix it.",
     "url": "https://www.openmarketsinstitute.eu/publications/exit-strategy-how-to-fix-eu-tech-sovereignty",
     "source": "Open Markets Europe",
-    "num": "#039",
+    "num": "#040",
     "id": "signal-exit-strategy-the-eu-s-tech-sovereignty-packa"
   },
   {
@@ -50,7 +77,7 @@
     "title": "Ribera says EU data centers should build their own clean energy supply",
     "url": "https://www.politico.eu/article/eu-big-tech-data-center-clean-power-supply-teresa-ribera/",
     "source": "Politico",
-    "num": "#038",
+    "num": "#039",
     "id": "signal-ribera-says-eu-data-centers-should-build-thei"
   },
   {
@@ -59,7 +86,7 @@
     "title": "Google to invest $15 billion in AI infrastructure and buy nuclear power in Finland",
     "url": "https://www.reuters.com/business/media-telecom/google-invest-15-billion-ai-infrastructure-finland-2026-09-09/",
     "source": "Reuters",
-    "num": "#037",
+    "num": "#038",
     "id": "signal-google-to-invest-15-billion-in-ai-infrastruct"
   },
   {
@@ -68,7 +95,7 @@
     "title": "Nvidia is the central bank of AI",
     "url": "https://www.economist.com/interactive/briefing/2026/09/03/nvidia-is-the-central-bank-of-ai",
     "source": "The Economist",
-    "num": "#036",
+    "num": "#037",
     "id": "signal-nvidia-is-the-central-bank-of-ai"
   },
   {
@@ -77,7 +104,7 @@
     "title": "On the Navier–Stokes Millennium Prize Problem",
     "url": "https://openai.com/index/navier-stokes-solution/",
     "source": "OpenAI",
-    "num": "#035",
+    "num": "#036",
     "id": "signal-on-the-navier-stokes-millennium-prize-problem"
   },
   {
@@ -86,7 +113,7 @@
     "title": "Mistral raises record €3bn as Europe strains to keep pace in AI race",
     "url": "https://giftarticle.ft.com/giftarticle/actions/redeem/7405adc5-99c1-4221-a6db-5385bb2cea98",
     "source": "Financial Times",
-    "num": "#034",
+    "num": "#035",
     "id": "signal-mistral-raises-record-3bn-as-europe-strains-t"
   },
   {
@@ -95,7 +122,7 @@
     "title": "AI moves fast. Here's how the law can keep up",
     "url": "https://www.ted.com/talks/kirsten_rulf_ai_moves_fast_here_s_how_the_law_can_keep_up",
     "source": "TED",
-    "num": "#033",
+    "num": "#034",
     "id": "signal-ai-moves-fast-here-s-how-the-law-can-keep-up"
   },
   {
@@ -104,7 +131,7 @@
     "title": "AI Act: OpenAI sends EU Commission incident report on hijacked German website",
     "url": "https://www.reuters.com/business/openai-has-sent-eu-incident-report-hijacked-german-website-commission-says-2026-09-07/",
     "source": "Reuters",
-    "num": "#032",
+    "num": "#033",
     "id": "signal-ai-act-openai-sends-eu-commission-incident-re"
   },
   {
@@ -113,7 +140,7 @@
     "title": "The EU Law Tracker",
     "url": "https://law-tracker.europa.eu/homepage?lang=en",
     "source": "European Commission",
-    "num": "#031",
+    "num": "#032",
     "id": "signal-the-eu-law-tracker"
   },
   {
@@ -122,7 +149,7 @@
     "title": "Fantasy M&A: the recipe for a European champion",
     "url": "https://www.ft.com/content/d4e5956a-200c-47d1-9241-f15f495c2cf2?emailId=a7dc0af3-eacf-495c-ab8f-316a7b72c9f6&segmentId=7d033110-c776-45bf-e9f2-7c3a03d2dd26&syn-25a6b1a6=1",
     "source": "Financial Times",
-    "num": "#030",
+    "num": "#031",
     "id": "signal-fantasy-m-a-the-recipe-for-a-european-champio"
   },
   {
@@ -131,7 +158,7 @@
     "title": "National data centre projects are consolidating America’s AI lead",
     "url": "https://www.ft.com/content/732c05fe-ca63-4048-8784-aebe80b8b1f4",
     "source": "Financial Times",
-    "num": "#029",
+    "num": "#030",
     "id": "signal-national-data-centre-projects-are-consolidati"
   },
   {
@@ -140,7 +167,7 @@
     "title": "Data Centers in Space - Fantasy or viable option?",
     "url": "https://www.bcg.com/publications/2026/space-based-data-centers-cost-outlook",
     "source": "Website",
-    "num": "#028",
+    "num": "#029",
     "id": "signal-data-centers-in-space-fantasy-or-viable-optio"
   },
   {
@@ -149,7 +176,7 @@
     "title": "The Hugging Face incident and the road ahead",
     "url": "https://openai.com/index/hugging-face-incident-and-the-road-ahead/",
     "source": "OpenAI",
-    "num": "#027",
+    "num": "#028",
     "id": "signal-the-hugging-face-incident-and-the-road-ahead"
   },
   {
@@ -158,7 +185,7 @@
     "title": "The turbulent AI era is here. The choices we make now are critical",
     "url": "https://www.gatesnotes.com/a-turbulent-ai-era-and-critical-choices-to-make",
     "source": "Gates Notes",
-    "num": "#026",
+    "num": "#027",
     "id": "signal-the-turbulent-ai-era-is-here-the-choices-we-m"
   },
   {
@@ -167,7 +194,7 @@
     "title": "Thomson Reuters Leverages its World-Class Data Assets to Launch Its Own Frontier Model.",
     "url": "https://www.thomsonreuters.com/en/press-releases/2026/august/thomson-reuters-leverages-its-world-class-data-assets-to-launch-its-own-frontier-model",
     "source": "Thomson Reuters",
-    "num": "#025",
+    "num": "#026",
     "id": "signal-thomson-reuters-leverages-its-world-class-dat"
   },
   {
@@ -176,7 +203,7 @@
     "title": "An interview with Yuval Noah Harari",
     "url": "https://www.economist.com/insider/the-insider/an-interview-with-yuval-noah-harari",
     "source": "The Economist",
-    "num": "#024",
+    "num": "#025",
     "id": "signal-an-interview-with-yuval-noah-harari"
   },
   {
@@ -185,7 +212,7 @@
     "title": "Deutsche Telekom: Konzern rudert bei Glasfaserausbau zurück",
     "url": "https://www.handelsblatt.com/unternehmen/dienstleister/deutsche-telekom-konzern-rudert-bei-glasfaserausbau-zurueck/100247079.html",
     "source": "Handelsblatt",
-    "num": "#023",
+    "num": "#024",
     "id": "signal-deutsche-telekom-konzern-rudert-bei-glasfaser"
   },
   {
@@ -194,7 +221,7 @@
     "title": "Europe must create an AI money-mobilisation machine",
     "url": "https://www.ft.com/content/8a3c87ca-53e0-4ce0-9c9d-c1f9c461f6b0?syn-25a6b1a6=1",
     "source": "Financial Times",
-    "num": "#022",
+    "num": "#023",
     "id": "signal-europe-must-create-an-ai-money-mobilisation-m"
   },
   {
@@ -203,7 +230,7 @@
     "title": "Microsoft and Mistral expand strategic partnership to give enterprises and regulated industries frontier AI they can control",
     "url": "https://news.microsoft.com/source/2026/07/21/microsoft-and-mistral-expand-strategic-partnership-to-give-enterprises-and-regulated-industries-frontier-ai-they-can-control/",
     "source": "Microsoft",
-    "num": "#021",
+    "num": "#022",
     "id": "signal-microsoft-and-mistral-expand-strategic-partne"
   },
   {
@@ -212,7 +239,7 @@
     "title": "Airbus picks Iliad's Scaleway for AI, defence work in sovereignty push",
     "url": "https://www.reuters.com/legal/litigation/airbus-picks-iliads-scaleway-ai-defence-work-sovereignty-push-2026-07-16/",
     "source": "Reuters",
-    "num": "#020",
+    "num": "#021",
     "id": "signal-airbus-picks-iliad-s-scaleway-for-ai-defence-"
   },
   {
@@ -221,7 +248,7 @@
     "title": "Seltene Erden: „Die Chinesen werden uns nicht helfen, die Nato aufzurüsten“",
     "url": "https://www.handelsblatt.com/unternehmen/mittelstand/familienunternehmer/seltene-erden-die-chinesen-werden-uns-nicht-helfen-die-nato-aufzuruesten/100233380.html",
     "source": "Handelsblatt",
-    "num": "#019",
+    "num": "#020",
     "id": "signal-seltene-erden-die-chinesen-werden-uns-nicht-h"
   },
   {
@@ -230,7 +257,7 @@
     "title": "Competing for inputs: how the European Union can improve critical raw materials supply security",
     "url": "https://www.bruegel.org/policy-brief/competing-inputs-how-european-union-can-improve-critical-raw-materials-supply-security",
     "source": "Academia (Bruegel Policy Brief)",
-    "num": "#018",
+    "num": "#019",
     "id": "signal-competing-for-inputs-how-the-european-union-c"
   },
   {
@@ -239,7 +266,7 @@
     "title": "Cloud-Sektor: Brüssel will AWS und Microsoft Azure strenger überwachen",
     "url": "https://www.handelsblatt.com/politik/international/cloud-sektor-bruessel-will-aws-und-microsoft-azure-strenger-ueberwachen/100235703.html",
     "source": "Handelsblatt",
-    "num": "#017",
+    "num": "#018",
     "id": "signal-cloud-sektor-br-ssel-will-aws-und-microsoft-a"
   },
   {
@@ -248,7 +275,7 @@
     "title": "Top carmakers warn EU tech sovereignty drive will raise costs",
     "url": "https://www.ft.com/content/3b9c9683-f137-4459-adc9-3679b8899c07?syn-25a6b1a6=1",
     "source": "Financial Times",
-    "num": "#016",
+    "num": "#017",
     "id": "signal-top-carmakers-warn-eu-tech-sovereignty-drive-"
   },
   {
@@ -257,8 +284,17 @@
     "title": "Rohstoffe: G7 wollen Obergrenze für Rohstoffimporte aus China erreichen",
     "url": "https://www.handelsblatt.com/politik/international/rohstoffe-g7-wollen-obergrenze-fuer-rohstoffimporte-aus-china-erreichen/100233834.html",
     "source": "Handelsblatt",
-    "num": "#015",
+    "num": "#016",
     "id": "signal-rohstoffe-g7-wollen-obergrenze-f-r-rohstoffim"
+  },
+  {
+    "layer": 0,
+    "date": "2026-06-11",
+    "title": "Kritische Rohstoffe im Überblick",
+    "url": "https://www.bundestag.de/resource/blob/1187860/WD-5-056-26.pdf",
+    "source": "Wissenschaftliche Dienste des Deutschen Bundestages (WD 5 – Wirtschaft, Energie, Klima)",
+    "num": "#015",
+    "id": "signal-kritische-rohstoffe-im-berblick"
   },
   {
     "layer": 7,
