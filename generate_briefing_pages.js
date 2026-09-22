@@ -70,6 +70,10 @@ function buildPage(b){
   const metaDesc = escapeAttr(b.excerpt.replace(/<[^>]+>/g, '')).slice(0, 160);
   const canonicalUrl = `${SITE_URL}/briefings/${b.id}.html`;
   const titleAttr = escapeAttr(b.title);
+  // per-briefing social-share image, falls back to the site default
+  const ogImageUrl = `https://beyondbeta.eu/${b.image || 'images/og-image.png'}`;
+  const ogImageWidth = b.imageWidth || 1731;
+  const ogImageHeight = b.imageHeight || 909;
 
   const prefix = '../';
   const header = `<header>
@@ -168,15 +172,15 @@ function buildPage(b){
 <meta property="og:title" content="${titleAttr}">
 <meta property="og:description" content="${metaDesc}">
 <meta property="og:url" content="${canonicalUrl}">
-<meta property="og:image" content="https://beyondbeta.eu/og-image.png">
-<meta property="og:image:width" content="1731">
-<meta property="og:image:height" content="909">
+<meta property="og:image" content="${ogImageUrl}">
+<meta property="og:image:width" content="${ogImageWidth}">
+<meta property="og:image:height" content="${ogImageHeight}">
 <meta property="og:image:alt" content="Beyond Beta — AI &amp; Technology Sovereignty">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${titleAttr}">
 <meta name="twitter:description" content="${metaDesc}">
-<meta name="twitter:image" content="https://beyondbeta.eu/og-image.png">
+<meta name="twitter:image" content="${ogImageUrl}">
 
 <link rel="stylesheet" href="../shared.css">
 <style>
