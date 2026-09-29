@@ -469,6 +469,27 @@ function renderTeam(containerId, list, opts){
   });
 }
 
+/* ---------- briefing title picture ----------
+   If a briefing has an "image" field in briefings.json, show that picture in the
+   "Latest briefing" banner instead of the default city-lights graphic.
+   Falls back to the city lights if the field is missing or the file fails to load. */
+function renderBriefingVisual(groupId, briefing){
+  const g = document.getElementById(groupId);
+  if(!g) return;
+  const svg = g.closest('svg');
+  const visual = g.closest('.briefing-visual');
+  if(!briefing || !briefing.image || !visual){ renderCityLights(groupId); return; }
+  visual.querySelectorAll('img.briefing-visual-img').forEach(el => el.remove());
+  const img = document.createElement('img');
+  img.className = 'briefing-visual-img';
+  img.alt = briefing.imageAlt || '';
+  img.decoding = 'async';
+  img.onload = () => { if(svg) svg.style.display = 'none'; };
+  img.onerror = () => { img.remove(); if(svg) svg.style.display = ''; if(!g.childElementCount) renderCityLights(groupId); };
+  img.src = briefing.image;
+  visual.appendChild(img);
+}
+
 function renderCityLights(groupId){
   const g = document.getElementById(groupId);
   if(!g) return;
