@@ -1,6 +1,15 @@
 [
   {
     "layer": 6,
+    "date": "2026-10-16",
+    "title": "China unveils draft export controls on AI technologies and chips",
+    "url": "https://www.ft.com/content/e0a1295c-4492-4fdd-aaf5-55678a9ef9bf?shareType=nongift",
+    "source": "Financial Times",
+    "num": "#070",
+    "id": "signal-china-unveils-draft-export-controls-on-ai-tec"
+  },
+  {
+    "layer": 6,
     "date": "2026-10-13",
     "title": "AI edges closer to solving the Riemann hypothesis, one of math’s hardest problems",
     "url": "doi: 10.1126/science.z1hb1jx",
