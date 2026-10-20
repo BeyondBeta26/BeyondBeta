@@ -102,18 +102,48 @@ function inlineMarkdown(s){
 function renderMarkdown(md){
   if(!md) return '';
   const blocks = md.trim().split(/\n\s*\n/);
-  return blocks.map(block => {
-    const b = block.trim();
+  const out = [];
+  function renderBlock(b){
     const h = b.match(/^(#{2,3})\s+(.*)$/);
     if(h){
       const level = h[1].length + 1;
       return `<h${level}>${inlineMarkdown(escapeHtml(h[2]))}</h${level}>`;
     }
-    const inner = inlineMarkdown(escapeHtml(b).replace(/\n/g, '<br>'));
-    return `<p>${inner}</p>`;
-  }).join('\n');
+    // ![caption](image.jpg) on its own line -> figure with caption
+    const img = b.match(/^!\[([^\]]*)\]\(([^\s)]+)\)$/);
+    if(img){
+      const cap = escapeHtml(img[1]);
+      return `<figure class="briefing-figure"><img src="${img[2]}" alt="${cap.replace(/"/g,'&quot;')}" loading="lazy">` +
+        (cap ? `<figcaption>${inlineMarkdown(cap)}</figcaption>` : '') + `</figure>`;
+    }
+    return `<p>${inlineMarkdown(escapeHtml(b).replace(/\n/g, '<br>'))}</p>`;
+  }
+  for(let i = 0; i < blocks.length; i++){
+    const b = blocks[i].trim();
+    // :::info Optional Title  ...  ::: -> infobox (may span several paragraphs)
+    const open = b.match(/^:::info[ \t]*(.*)$/m);
+    if(open && b.startsWith(':::info')){
+      const title = open[1].trim();
+      let inner = b.slice(b.indexOf('\n') === -1 ? b.length : b.indexOf('\n') + 1);
+      const parts = [];
+      let closed = false;
+      while(true){
+        const t = inner.trim();
+        if(t.endsWith(':::')){ const last = t.slice(0, -3).trim(); if(last) parts.push(last); closed = true; break; }
+        if(t) parts.push(t);
+        if(++i >= blocks.length) break;
+        inner = blocks[i];
+      }
+      out.push(`<aside class="infobox" role="note"${title ? ` aria-label="${escapeHtml(title).replace(/"/g,'&quot;')}"` : ''}>` +
+        `<p class="infobox-label">Infobox</p>` +
+        (title ? `<p class="infobox-title">${inlineMarkdown(escapeHtml(title))}</p>` : '') +
+        parts.map(renderBlock).join('') + `</aside>`);
+      continue;
+    }
+    out.push(renderBlock(b));
+  }
+  return out.join('\n');
 }
-
 /* ---------- generic svg helpers ---------- */
 const SVGNS = "http://www.w3.org/2000/svg";
 function el(tag, attrs){
