@@ -1,6 +1,15 @@
 [
   {
-    "layer": 6,
+    "layer": 7,
+    "date": "2026-10-19",
+    "title": "Does China really prize AI speed over safety?",
+    "url": "https://www.economist.com/china/2026/10/19/does-china-really-prize-ai-speed-over-safety",
+    "source": "The Economist",
+    "num": "#071",
+    "id": "signal-does-china-really-prize-ai-speed-over-safety"
+  },
+  {
+    "layer": 7,
     "date": "2026-10-16",
     "title": "China unveils draft export controls on AI technologies and chips",
     "url": "https://www.ft.com/content/e0a1295c-4492-4fdd-aaf5-55678a9ef9bf?shareType=nongift",
