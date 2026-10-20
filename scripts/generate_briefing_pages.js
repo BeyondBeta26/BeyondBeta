@@ -52,11 +52,11 @@ function fixRelativeLinks(html){
   // links inside a briefing's body use root-relative paths (framework.html,
   // about.html#contact) because that's correct from the site root -- these
   // pages live one folder deeper, so those links need a ../ prefix.
-  return html.replace(/href="([^"]+)"/g, (m, href) => {
-    if(/^https?:\/\//.test(href) || href.startsWith('../') || href.startsWith('/') || href.startsWith('#')){
+  return html.replace(/(href|src)="([^"]+)"/g, (m, attr, href) => {
+    if(/^https?:\/\//.test(href) || href.startsWith('../') || href.startsWith('/') || href.startsWith('#') || href.startsWith('data:')){
       return m;
     }
-    return `href="../${href}"`;
+    return `${attr}="../${href}"`;
   });
 }
 function escapeAttr(s){
@@ -159,10 +159,6 @@ function buildPage(b){
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="../favicon.ico" sizes="any">
-<link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
-<link rel="apple-touch-icon" href="../apple-touch-icon.png">
 <title>${escapeHtml(b.title)} — Beyond Beta</title>
 <meta name="description" content="${metaDesc}">
 <link rel="canonical" href="${canonicalUrl}">
@@ -172,7 +168,7 @@ function buildPage(b){
 <meta property="og:title" content="${titleAttr}">
 <meta property="og:description" content="${metaDesc}">
 <meta property="og:url" content="${canonicalUrl}">
-<meta property="og:image" content="https://beyondbeta.eu/og-image.png">
+<meta property="og:image" content="https://beyondbeta.eu/images/og-image.png">
 <meta property="og:image:width" content="1731">
 <meta property="og:image:height" content="909">
 <meta property="og:image:alt" content="Beyond Beta — AI &amp; Technology Sovereignty">
@@ -180,7 +176,7 @@ function buildPage(b){
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="${titleAttr}">
 <meta name="twitter:description" content="${metaDesc}">
-<meta name="twitter:image" content="https://beyondbeta.eu/og-image.png">
+<meta name="twitter:image" content="https://beyondbeta.eu/images/og-image.png">
 
 <link rel="stylesheet" href="../shared.css">
 <style>
@@ -239,28 +235,3 @@ briefings.forEach(b => {
   fs.writeFileSync(path.join(OUT_DIR, `${b.id}.html`), html);
   console.log(`Wrote briefings/${b.id}.html`);
 });
-
-// --- regenerate sitemap.xml so it always reflects every current briefing ---
-const today = new Date().toISOString().slice(0, 10);
-const staticPages = [
-  { loc: '/', changefreq: 'weekly', priority: '1.0' },
-  { loc: '/framework.html', changefreq: 'monthly', priority: '0.8' },
-  { loc: '/briefings.html', changefreq: 'weekly', priority: '0.9' },
-  { loc: '/briefings-archive.html', changefreq: 'monthly', priority: '0.5' },
-  { loc: '/signals.html', changefreq: 'daily', priority: '0.9' },
-  { loc: '/signals-archive.html', changefreq: 'weekly', priority: '0.5' },
-  { loc: '/authors.html', changefreq: 'monthly', priority: '0.6' },
-  { loc: '/about.html', changefreq: 'monthly', priority: '0.6' },
-  { loc: '/impressum.html', changefreq: 'yearly', priority: '0.3' },
-  { loc: '/privacy-policy.html', changefreq: 'yearly', priority: '0.3' },
-  { loc: '/site-notice.html', changefreq: 'yearly', priority: '0.3' },
-];
-
-const urlEntries = [
-  ...staticPages.map(p => `  <url>\n    <loc>${SITE_URL}${p.loc}</loc>\n    <lastmod>${today}</lastmod>\n    <changefreq>${p.changefreq}</changefreq>\n    <priority>${p.priority}</priority>\n  </url>`),
-  ...briefings.map(b => `  <url>\n    <loc>${SITE_URL}/briefings/${b.id}.html</loc>\n    <lastmod>${b.date}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.7</priority>\n  </url>`),
-];
-
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urlEntries.join('\n')}\n</urlset>\n`;
-fs.writeFileSync(path.join(ROOT, 'sitemap.xml'), sitemap);
-console.log('Wrote sitemap.xml');
