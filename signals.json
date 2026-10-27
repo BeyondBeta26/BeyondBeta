@@ -1,5 +1,23 @@
 [
   {
+    "layer": 2,
+    "date": "2026-10-26",
+    "title": "Europe vs. Elon: 5 ways the EU is trying to squeeze out Musk’s Starlink",
+    "url": "https://www.politico.eu/article/elon-musk-5-ways-eu-starlink/",
+    "source": "Politico",
+    "num": "#073",
+    "id": "signal-europe-vs-elon-5-ways-the-eu-is-trying-to-squ"
+  },
+  {
+    "layer": 6,
+    "date": "2026-10-19",
+    "title": "Siemens and Nvidia are planning a prototype of an autonomous factory",
+    "url": "https://www.handelsblatt.com/unternehmen/industrie/ki-siemens-und-nvidia-planen-den-prototyp-der-autonomen-fabrik/100262775.html?mls-token=8975c85b5d2939b421cf6c7328412a9097d8e34dec7f1b32173bb1ab525df660b4159611d358e98f585fb3ac6281f0940100262775",
+    "source": "Handelsblatt",
+    "num": "#072",
+    "id": "signal-siemens-and-nvidia-are-planning-a-prototype-o"
+  },
+  {
     "layer": 7,
     "date": "2026-10-19",
     "title": "Does China really prize AI speed over safety?",
