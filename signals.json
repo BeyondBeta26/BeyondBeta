@@ -1,11 +1,29 @@
 [
   {
     "layer": 7,
+    "date": "2026-11-08",
+    "title": "EU countries still can’t get it together on AI",
+    "url": "https://www.politico.eu/article/eu-countries-still-cant-get-it-together-on-ai/",
+    "source": "Politico",
+    "num": "#083",
+    "id": "signal-eu-countries-still-can-t-get-it-together-on-a"
+  },
+  {
+    "layer": 6,
+    "date": "2026-11-06",
+    "title": "KI: Befreiungsschlag? Mistral veröffentlicht neues Spitzenmodell",
+    "url": "https://www.handelsblatt.com/technik/ki/ki-befreiungsschlag-mistral-veroeffentlicht-neues-spitzenmodell/100260044.html",
+    "source": "Handelsblatt",
+    "num": "#082",
+    "id": "signal-ki-befreiungsschlag-mistral-ver-ffentlicht-ne"
+  },
+  {
+    "layer": 7,
     "date": "2026-11-04",
     "title": "EU leaders to meet in Dublin for AI summit next week",
     "url": "https://www.brusselstimes.com/brussels-2/2390745/eu-leaders-to-meet-in-dublin-for-ai-summit-next-week",
     "source": "The Brussels Times",
-    "num": "#082",
+    "num": "#081",
     "id": "signal-eu-leaders-to-meet-in-dublin-for-ai-summit-ne"
   },
   {
@@ -14,7 +32,7 @@
     "title": "Sequoia shuts London office as VC firm refocuses on Silicon Valley",
     "url": "https://www.ft.com/content/a55bf156-1c61-4ff6-8c3c-5b8db837abd0?syn-25a6b1a6=1",
     "source": "Financial Times",
-    "num": "#081",
+    "num": "#080",
     "id": "signal-sequoia-shuts-london-office-as-vc-firm-refocu"
   },
   {
@@ -23,7 +41,7 @@
     "title": "Prozesse: EuGH-Gutachten: KI-Chatbots können Urheberrecht verletzen",
     "url": "https://www.handelsblatt.com/politik/deutschland/prozesse-eugh-gutachten-ki-chatbots-koennen-urheberrecht-verletzen/100266959.html",
     "source": "Handelsblatt",
-    "num": "#080",
+    "num": "#079",
     "id": "signal-prozesse-eugh-gutachten-ki-chatbots-k-nnen-ur"
   },
   {
@@ -32,7 +50,7 @@
     "title": "KI-Taskforce Ergebnisbericht: Deutschland als KI-Nation 2030",
     "url": "https://www.bundesregierung.de/resource/blob/992814/2459514/b8518975df987ac1cfdc1fc5b655efb3/2026-11-02-ki-data.pdf?download=1",
     "source": "Bundesregierung",
-    "num": "#079",
+    "num": "#078",
     "id": "signal-ki-taskforce-ergebnisbericht-deutschland-als-"
   },
   {
@@ -41,7 +59,7 @@
     "title": "Nokia, Iceye Partner to Launch European Sovereign Satellite Service",
     "url": "https://www.bloomberg.com/news/articles/2026-10-01/nokia-iceye-to-launch-sovereign-satellite-service-for-defense",
     "source": "Bloomberg",
-    "num": "#078",
+    "num": "#077",
     "id": "signal-nokia-iceye-partner-to-launch-european-sovere"
   },
   {
@@ -50,7 +68,7 @@
     "title": "IT-Supermächte USA und China: Studie: Europas digitale Abhängigkeit wächst",
     "url": "https://www.handelsblatt.com/technik/it-internet/it-supermaechte-usa-und-china-studie-europas-digitale-abhaengigkeit-waechst/100265448.html",
     "source": "Handelsblatt (dpa-Meldung)",
-    "num": "#077",
+    "num": "#076",
     "id": "signal-it-superm-chte-usa-und-china-studie-europas-d"
   },
   {
@@ -59,7 +77,7 @@
     "title": "The Al industry may regret its Trump bet after the Midterms",
     "url": "https://www.bloomberg.com/news/newsletters/2026-10-29/big-tech-prepares-for-ai-regulation-fight-after-us-midterms",
     "source": "Bloomberg",
-    "num": "#076",
+    "num": "#075",
     "id": "signal-the-al-industry-may-regret-its-trump-bet-afte"
   },
   {
@@ -68,7 +86,7 @@
     "title": "EU plans massive investment in Australia’s critical minerals to cut dependence on China",
     "url": "https://euobserver.com/245274/eu-plans-massive-investment-in-australias-critical-minerals-to-cut-dependence-on-china",
     "source": "EUobserver",
-    "num": "#075",
+    "num": "#074",
     "id": "signal-eu-plans-massive-investment-in-australia-s-cr"
   },
   {
@@ -77,7 +95,7 @@
     "title": "Europe vs. Elon: 5 ways the EU is trying to squeeze out Musk’s Starlink",
     "url": "https://www.politico.eu/article/elon-musk-5-ways-eu-starlink/",
     "source": "Politico",
-    "num": "#074",
+    "num": "#073",
     "id": "signal-europe-vs-elon-5-ways-the-eu-is-trying-to-squ"
   },
   {
@@ -86,7 +104,7 @@
     "title": "Siemens and Nvidia are planning a prototype of an autonomous factory",
     "url": "https://www.handelsblatt.com/unternehmen/industrie/ki-siemens-und-nvidia-planen-den-prototyp-der-autonomen-fabrik/100262775.html?mls-token=8975c85b5d2939b421cf6c7328412a9097d8e34dec7f1b32173bb1ab525df660b4159611d358e98f585fb3ac6281f0940100262775",
     "source": "Handelsblatt",
-    "num": "#073",
+    "num": "#072",
     "id": "signal-siemens-and-nvidia-are-planning-a-prototype-o"
   },
   {
@@ -95,7 +113,7 @@
     "title": "Does China really prize AI speed over safety?",
     "url": "https://www.economist.com/china/2026/10/19/does-china-really-prize-ai-speed-over-safety",
     "source": "The Economist",
-    "num": "#072",
+    "num": "#071",
     "id": "signal-does-china-really-prize-ai-speed-over-safety"
   },
   {
@@ -104,7 +122,7 @@
     "title": "China unveils draft export controls on AI technologies and chips",
     "url": "https://www.ft.com/content/e0a1295c-4492-4fdd-aaf5-55678a9ef9bf?shareType=nongift",
     "source": "Financial Times",
-    "num": "#071",
+    "num": "#070",
     "id": "signal-china-unveils-draft-export-controls-on-ai-tec"
   },
   {
@@ -113,7 +131,7 @@
     "title": "AI edges closer to solving the Riemann hypothesis, one of math’s hardest problems",
     "url": "doi: 10.1126/science.z1hb1jx",
     "source": "American Association for the Advancement of Science",
-    "num": "#070",
+    "num": "#069",
     "id": "signal-ai-edges-closer-to-solving-the-riemann-hypoth"
   },
   {
@@ -122,7 +140,7 @@
     "title": "China faces uphill battle to wean tech firms off Nvidia chips",
     "url": "https://www.ft.com/content/9dbd99db-6b0c-43bd-b7be-849f129df098?shareType=nongift",
     "source": "Financial Times",
-    "num": "#069",
+    "num": "#068",
     "id": "signal-china-faces-uphill-battle-to-wean-tech-firms-"
   },
   {
@@ -131,7 +149,7 @@
     "title": "Commission selects 46 new Strategic Projects to bolster the EU’s supply of critical raw materials",
     "url": "https://luxembourg.representation.ec.europa.eu/actualites-et-evenements/actualites/commission-selects-46-new-strategic-projects-bolster-eus-supply-critical-raw-materials-2026-10-09_en",
     "source": "European Comission",
-    "num": "#068",
+    "num": "#067",
     "id": "signal-commission-selects-46-new-strategic-projects-"
   },
   {
@@ -140,7 +158,7 @@
     "title": "KI: Wie Tech-Konzerne reicher und mächtiger werden als ganze Staaten",
     "url": "https://www.handelsblatt.com/technik/ki/ki-wie-tech-konzerne-reicher-und-maechtiger-werden-als-ganze-staaten/100257965.html",
     "source": "Handelsblatt",
-    "num": "#067",
+    "num": "#066",
     "id": "signal-ki-wie-tech-konzerne-reicher-und-m-chtiger-we"
   },
   {
@@ -149,17 +167,8 @@
     "title": "Tech firms pledge $2.4B in computing power to Trump’s Genesis Mission",
     "url": "https://www.politico.com/news/2026/10/08/tech-firms-pledge-2-4-billion-in-computing-power-to-trumps-genesis-mission-01111708",
     "source": "Politico",
-    "num": "#066",
-    "id": "signal-tech-firms-pledge-2-4b-in-computing-power-to-"
-  },
-  {
-    "layer": 6,
-    "date": "2026-10-06",
-    "title": "KI: Befreiungsschlag? Mistral veröffentlicht neues Spitzenmodell",
-    "url": "https://www.handelsblatt.com/technik/ki/ki-befreiungsschlag-mistral-veroeffentlicht-neues-spitzenmodell/100260044.html",
-    "source": "Handelsblatt",
     "num": "#065",
-    "id": "signal-ki-befreiungsschlag-mistral-ver-ffentlicht-ne"
+    "id": "signal-tech-firms-pledge-2-4b-in-computing-power-to-"
   },
   {
     "layer": 3,
