@@ -5,7 +5,7 @@
     "title": "Three Europeans are selling the data of Germany's Mittelstand to AI labs",
     "url": "https://www.faz.net/premium/digitalwirtschaft/kuenstliche-intelligenz/deutsches-industriewissen-fuer-ki-labore-start-up-kauft-mittelstaendlern-alte-daten-ab-accg-201668551.html",
     "source": "FAZ",
-    "num": "#085",
+    "num": "#086",
     "id": "signal-three-europeans-are-selling-the-data-of-germa"
   },
   {
@@ -14,7 +14,7 @@
     "title": "Europe Taps China Playbook to Cut Dependence on imports",
     "url": "https://www.bloomberg.com/news/features/2026-11-09/rare-earths-eu-taps-china-playbook-to-cut-dependence-on-imports",
     "source": "Bloomberg",
-    "num": "#084",
+    "num": "#085",
     "id": "signal-europe-taps-china-playbook-to-cut-dependence-"
   },
   {
@@ -23,7 +23,7 @@
     "title": "EU countries still can’t get it together on AI",
     "url": "https://www.politico.eu/article/eu-countries-still-cant-get-it-together-on-ai/",
     "source": "Politico",
-    "num": "#083",
+    "num": "#084",
     "id": "signal-eu-countries-still-can-t-get-it-together-on-a"
   },
   {
@@ -32,7 +32,7 @@
     "title": "KI: Befreiungsschlag? Mistral veröffentlicht neues Spitzenmodell",
     "url": "https://www.handelsblatt.com/technik/ki/ki-befreiungsschlag-mistral-veroeffentlicht-neues-spitzenmodell/100260044.html",
     "source": "Handelsblatt",
-    "num": "#082",
+    "num": "#083",
     "id": "signal-ki-befreiungsschlag-mistral-ver-ffentlicht-ne"
   },
   {
@@ -41,7 +41,7 @@
     "title": "EU leaders to meet in Dublin for AI summit next week",
     "url": "https://www.brusselstimes.com/brussels-2/2390745/eu-leaders-to-meet-in-dublin-for-ai-summit-next-week",
     "source": "The Brussels Times",
-    "num": "#081",
+    "num": "#082",
     "id": "signal-eu-leaders-to-meet-in-dublin-for-ai-summit-ne"
   },
   {
@@ -50,7 +50,7 @@
     "title": "Sequoia shuts London office as VC firm refocuses on Silicon Valley",
     "url": "https://www.ft.com/content/a55bf156-1c61-4ff6-8c3c-5b8db837abd0?syn-25a6b1a6=1",
     "source": "Financial Times",
-    "num": "#080",
+    "num": "#081",
     "id": "signal-sequoia-shuts-london-office-as-vc-firm-refocu"
   },
   {
@@ -59,7 +59,7 @@
     "title": "Prozesse: EuGH-Gutachten: KI-Chatbots können Urheberrecht verletzen",
     "url": "https://www.handelsblatt.com/politik/deutschland/prozesse-eugh-gutachten-ki-chatbots-koennen-urheberrecht-verletzen/100266959.html",
     "source": "Handelsblatt",
-    "num": "#079",
+    "num": "#080",
     "id": "signal-prozesse-eugh-gutachten-ki-chatbots-k-nnen-ur"
   },
   {
@@ -68,7 +68,7 @@
     "title": "KI-Taskforce Ergebnisbericht: Deutschland als KI-Nation 2030",
     "url": "https://www.bundesregierung.de/resource/blob/992814/2459514/b8518975df987ac1cfdc1fc5b655efb3/2026-11-02-ki-data.pdf?download=1",
     "source": "Bundesregierung",
-    "num": "#078",
+    "num": "#079",
     "id": "signal-ki-taskforce-ergebnisbericht-deutschland-als-"
   },
   {
@@ -77,7 +77,7 @@
     "title": "Nokia, Iceye Partner to Launch European Sovereign Satellite Service",
     "url": "https://www.bloomberg.com/news/articles/2026-10-01/nokia-iceye-to-launch-sovereign-satellite-service-for-defense",
     "source": "Bloomberg",
-    "num": "#077",
+    "num": "#078",
     "id": "signal-nokia-iceye-partner-to-launch-european-sovere"
   },
   {
@@ -86,7 +86,7 @@
     "title": "IT-Supermächte USA und China: Studie: Europas digitale Abhängigkeit wächst",
     "url": "https://www.handelsblatt.com/technik/it-internet/it-supermaechte-usa-und-china-studie-europas-digitale-abhaengigkeit-waechst/100265448.html",
     "source": "Handelsblatt (dpa-Meldung)",
-    "num": "#076",
+    "num": "#077",
     "id": "signal-it-superm-chte-usa-und-china-studie-europas-d"
   },
   {
@@ -95,7 +95,7 @@
     "title": "The Al industry may regret its Trump bet after the Midterms",
     "url": "https://www.bloomberg.com/news/newsletters/2026-10-29/big-tech-prepares-for-ai-regulation-fight-after-us-midterms",
     "source": "Bloomberg",
-    "num": "#075",
+    "num": "#076",
     "id": "signal-the-al-industry-may-regret-its-trump-bet-afte"
   },
   {
@@ -104,7 +104,7 @@
     "title": "EU plans massive investment in Australia’s critical minerals to cut dependence on China",
     "url": "https://euobserver.com/245274/eu-plans-massive-investment-in-australias-critical-minerals-to-cut-dependence-on-china",
     "source": "EUobserver",
-    "num": "#074",
+    "num": "#075",
     "id": "signal-eu-plans-massive-investment-in-australia-s-cr"
   },
   {
@@ -113,8 +113,17 @@
     "title": "Europe vs. Elon: 5 ways the EU is trying to squeeze out Musk’s Starlink",
     "url": "https://www.politico.eu/article/elon-musk-5-ways-eu-starlink/",
     "source": "Politico",
-    "num": "#073",
+    "num": "#074",
     "id": "signal-europe-vs-elon-5-ways-the-eu-is-trying-to-squ"
+  },
+  {
+    "layer": 7,
+    "date": "2026-10-22",
+    "title": "Digital rulebook: Council agrees position to simplify data protection, privacy and cyber reporting rules",
+    "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/10/21/digital-rulebook-council-agrees-position-to-simplify-data-protection-privacy-and-cyber-reporting-rules/",
+    "source": "Council of the European Union",
+    "num": "#073",
+    "id": "signal-digital-rulebook-council-agrees-position-to-s"
   },
   {
     "layer": 6,
