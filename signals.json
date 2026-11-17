@@ -1,5 +1,23 @@
 [
   {
+    "layer": 1,
+    "date": "2026-11-17",
+    "title": "US Moves to Curb China's Remote Access to Nvidia's AI Chips",
+    "url": "https://www.bloomberg.com/news/articles/2026-11-16/us-moves-to-limit-remote-access-to-advanced-ai-chips",
+    "source": "Bloomberg",
+    "num": "#088",
+    "id": "signal-us-moves-to-curb-china-s-remote-access-to-nvi"
+  },
+  {
+    "layer": 7,
+    "date": "2026-11-16",
+    "title": "California sues OpenAI over rogue AI hack of Hugging Face",
+    "url": "https://www.politico.com/news/2026/11/16/bonta-sues-openai-over-rogue-ai-hack-of-hugging-face-01166953",
+    "source": "Politico",
+    "num": "#087",
+    "id": "signal-california-sues-openai-over-rogue-ai-hack-of-"
+  },
+  {
     "layer": 5,
     "date": "2026-11-11",
     "title": "Three Europeans are selling the data of Germany's Mittelstand to AI labs",
